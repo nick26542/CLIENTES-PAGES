@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "r3gimen-gym/index.html"
+        ],
+        "createdAt": "2026-10-21T22:28:35.991Z",
+        "reason": "Brief: user asked for a futuristic look matching the client's neon-blue LED brand (their gym and flyers use blue neon glow)"
+      }
+    ]
+  }
+}
