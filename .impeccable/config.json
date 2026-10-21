@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-10-21T22:28:35.991Z",
         "reason": "Brief: user asked for a futuristic look matching the client's neon-blue LED brand (their gym and flyers use blue neon glow)"
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "r3gimen-gym/index.html"
+        ],
+        "createdAt": "2026-10-21T22:32:46.128Z",
+        "reason": "Brief: user asked for lots of animation; strip is decorative, aria-hidden, repeats words shown elsewhere"
       }
     ]
   }
