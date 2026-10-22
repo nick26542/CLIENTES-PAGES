@@ -54,7 +54,7 @@ a{color:inherit}
 /* header */
 header{position:sticky;top:0;z-index:50;background:rgba(4,6,12,.94);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand{display:flex;align-items:center;gap:12px;min-height:44px;text-decoration:none}
 .brand img{height:30px;width:auto}
 .brand span{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.04em;line-height:1}
 .brand small{display:block;font-family:var(--tech);font-size:11px;letter-spacing:.2em;color:var(--muted);margin-top:3px}
@@ -71,7 +71,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(4,6,12,.94);border-botto
 .btn-ghost{background:rgba(46,91,255,.08);color:var(--text);border-color:var(--line2)}
 .btn-sm{--h:44px;padding:0 18px;font-size:12px}
 .btn .arr{display:inline-block;transition:transform 200ms var(--ease-out)}
-.textlink{display:inline-flex;align-items:center;gap:8px;min-height:44px;background:none;border:0;padding:0;color:var(--blue-hi);font:600 14px/1.2 var(--tech);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.textlink{text-align:left;display:inline-block;background:none;border:0;padding:12px 0;color:var(--blue-hi);font:600 14px/1.2 var(--tech);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer}
 .textlink .arr{transition:transform 200ms var(--ease-out)}
 @media (hover:hover) and (pointer:fine){
   .btn-primary:hover{background:#3F69FF;box-shadow:0 8px 30px rgba(46,91,255,.55)}
@@ -96,12 +96,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(4,6,12,.94);border-botto
 .h1 .ln>span{display:block;animation:rise 1000ms var(--ease-out) both}
 .h1 .ln:nth-child(2)>span{animation-delay:110ms}
 .h1 .ln:nth-child(3)>span{animation-delay:220ms}
+.h1.settled .ln{overflow:visible}
 @keyframes rise{from{transform:translateY(100%);filter:blur(8px)}to{transform:none;filter:blur(0)}}
 .lede{font-size:20px;max-width:46ch;color:var(--muted);margin:28px 0 0}
 .lede strong{color:var(--text);font-weight:600}
 .chip{display:inline-flex;align-items:center;gap:12px;margin-top:26px;padding:10px 16px 10px 12px;min-height:44px;border:1px solid var(--line2);background:rgba(46,91,255,.08);text-decoration:none;font:600 13px/1.25 var(--tech);letter-spacing:.1em;text-transform:uppercase;color:var(--chrome);transition:border-color 200ms ease,background-color 200ms ease}
 .chip svg{flex:none}
-.chip b{color:var(--text);font-weight:600}
+.chip b{display:block;margin-top:3px;color:var(--text);font-weight:600}
 .chip .arr{color:var(--blue-hi);transition:transform 200ms var(--ease-out)}
 @media (hover:hover) and (pointer:fine){.chip:hover{border-color:var(--blue-hi);background:rgba(46,91,255,.16)}}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
@@ -122,13 +123,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(4,6,12,.94);border-botto
 @keyframes draw{to{stroke-dashoffset:0}}
 .tri{position:absolute;width:118%;left:-9%;top:6%;opacity:.55;pointer-events:none}
 .tri path{fill:none;stroke:var(--blue);stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2200ms var(--ease-in-out) 900ms forwards;filter:drop-shadow(0 0 10px var(--blue))}
-.inset{position:absolute;left:-44px;bottom:-40px;width:44%;border:1px solid var(--line2);background:var(--panel);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.6);text-decoration:none;animation:fade 800ms var(--ease-out) 900ms both;transition:border-color 300ms ease,transform 400ms var(--ease-out)}
+.inset{position:absolute;left:-44px;top:-36px;width:40%;border:1px solid var(--line2);background:var(--panel);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.6);text-decoration:none;animation:fade 800ms var(--ease-out) 900ms both;transition:border-color 300ms ease,transform 400ms var(--ease-out)}
 .inset img{width:100%;height:auto;aspect-ratio:4/3.4;object-fit:cover;object-position:50% 20%}
-.inset p{margin:0;padding:10px 12px;font-family:var(--tech);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--chrome);display:flex;align-items:center;gap:8px;line-height:1.3}
+.inset p{margin:0;padding:10px 12px;font-family:var(--tech);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--chrome);display:flex;align-items:center;gap:8px;line-height:1.3}
 .inset p .arr{margin-left:auto;color:var(--blue-hi)}
 @media (hover:hover) and (pointer:fine){.inset:hover{border-color:var(--blue-hi);transform:translateY(-4px)}}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);flex:none}
-@media (max-width:600px){.inset{left:-6px;bottom:-34px;width:52%}}
+@media (max-width:600px){.inset{left:-6px;top:-30px;width:46%}}
 
 /* marquee */
 .marquee{border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:18px 0}
@@ -197,6 +198,7 @@ section.block{padding:130px 0}
 .steps li{counter-increment:s;display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);font-size:18px}
 .steps li::before{content:"0" counter(s);font-family:var(--display);font-weight:900;font-size:40px;line-height:1;color:var(--blue-hi)}
 .steps a{color:var(--blue-hi);text-underline-offset:4px}
+.steps a.help{display:inline-block;padding:11px 2px;margin:-11px 0}
 .arrive .cta-row{margin-top:32px}
 .micro{margin:16px 0 0;font-size:15px;color:var(--muted);max-width:52ch}
 .share-row{margin-top:10px}
@@ -213,13 +215,14 @@ section.block{padding:130px 0}
 .js .facade[data-visible] .scan{animation:scan 1600ms var(--ease-in-out) 300ms 1 both}
 @keyframes scan{from{top:-30%}to{top:100%}}
 .reel{margin-top:14px}
+@media (max-width:600px){.facade .shade{display:none}.facade figcaption{position:static;margin-top:14px}}
 
 .map{display:block;margin-top:16px;text-decoration:none;border:1px solid var(--line2);background:#060B18;position:relative;overflow:hidden;transition:border-color 300ms ease}
 @media (hover:hover) and (pointer:fine){.map:hover{border-color:var(--blue-hi)}}
 .map svg{display:block;width:100%;height:auto}
-.map .lbl{font:600 14px var(--tech);letter-spacing:.06em;fill:#C9D2E3}
-.map .lbl-strong{font:800 15px var(--display);letter-spacing:.06em;fill:#fff}
-.map .lbl-blue{font:600 13px var(--tech);letter-spacing:.08em;fill:#7FA0FF}
+.map .lbl{font:600 17px var(--tech);letter-spacing:.04em;fill:#C9D2E3}
+.map .lbl-strong{font:800 19px var(--display);letter-spacing:.06em;fill:#fff}
+.map .lbl-blue{font:600 16px var(--tech);letter-spacing:.06em;fill:#7FA0FF}
 .map .conn{stroke:#7FA0FF;stroke-width:1.5;stroke-dasharray:4 5;fill:none;animation:march 1.2s linear infinite}
 @keyframes march{to{stroke-dashoffset:-9}}
 .map .pin{transform-box:fill-box;transform-origin:50% 100%}
@@ -231,7 +234,7 @@ section.block{padding:130px 0}
 .map-foot .open{color:var(--blue-hi)}
 
 /* space bento */
-.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:250px;gap:12px}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:250px;grid-auto-flow:dense;gap:12px}
 .bento figure{margin:0;position:relative;overflow:hidden;background:var(--panel)}
 .bento img{width:100%;height:100%;object-fit:cover;transition:transform 900ms var(--ease-out)}
 .bento figcaption{position:absolute;left:14px;bottom:14px;font-family:var(--tech);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:9px 12px;background:rgba(4,6,12,.82);border:1px solid var(--line2);color:var(--chrome)}
@@ -304,11 +307,12 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
 /* mobile action bar */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:56;display:none;grid-template-columns:repeat(3,minmax(0,1fr));background:rgba(6,10,22,.97);border-top:1px solid var(--line2);padding-bottom:env(safe-area-inset-bottom);transform:translateY(110%);transition:transform 220ms var(--ease-out)}
 .mbar.on{transform:none}
-.mbar a,.mbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:8px 4px;background:none;border:0;color:var(--chrome);font:600 11px/1.1 var(--tech);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.mbar a,.mbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:8px 4px;background:none;border:0;color:var(--chrome);font:600 12px/1.1 var(--tech);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer}
 .mbar a:active,.mbar button:active{background:rgba(46,91,255,.14)}
 .mbar .main{color:#fff;background:var(--blue)}
 .mbar .main:active{background:#3F69FF}
-@media (max-width:760px){.mbar{display:grid}.wa{display:none}body{--bar:calc(62px + env(safe-area-inset-bottom))}}
+@media (max-width:960px){.mbar{display:grid}.wa,.nav>.btn{display:none}body{--bar:calc(62px + env(safe-area-inset-bottom))}}
+@media (max-width:420px){.btn{letter-spacing:.08em;padding:0 18px}.chip{font-size:12px;letter-spacing:.06em}}
 
 /* reveal */
 .js .rv:not([data-visible]){opacity:0;transform:translateY(22px);filter:blur(6px)}
@@ -359,7 +363,7 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
       <p class="lede fade-in">Gimnasio <strong>semipersonalizado</strong> en Cabañas, Bello. Entrenas a tu ritmo con una rutina hecha para tu objetivo, mientras un entrenador en sala corrige tu técnica.</p>
       <a class="chip fade-in" href="#llegar">
         <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2h12L8 14z" fill="none" stroke="#4FD3FF" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        <span>Nuevo en Cabañas · <b>Al frente de Arepas y Arepas</b></span>
+        <span>Nuevo en Cabañas<b>Al frente de Arepas y Arepas</b></span>
         <span class="arr" aria-hidden="true">→</span>
       </a>
       <div class="cta-row fade-in">
@@ -397,7 +401,7 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
   <div class="wrap">
     <div class="sec-head">
       <h2 class="display h2 rv">Tres pilares.<br><span class="glow">Un solo régimen.</span></h2>
-      <p class="rv" data-d="1">No es un gimnasio donde te dejan solo, ni un personalizado que no puedes pagar. Es el punto medio que sí funciona.</p>
+      <p class="rv" data-d="1">No es un gimnasio donde te dejan solo, ni un entrenamiento uno a uno. Es el punto medio: tu propia rutina, con un entrenador en sala.</p>
     </div>
     <div class="method">
       <div class="method-media rv">
@@ -433,20 +437,20 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
     </div>
     <div class="classes">
       <article class="card class-card rv">
-        <div class="pic"><img src="img/funcional-clase.jpg" alt="Entrenador con camiseta azul dirige una clase grupal de funcional en R3GIMEN GYM" width="900" height="1397" loading="lazy" style="object-position:45% 35%"></div>
+        <div class="pic"><img src="img/funcional-clase.jpg" alt="Hombre de camiseta azul haciendo un ejercicio de desplazamiento en la zona funcional de R3GIMEN GYM, con otras personas entrenando al fondo" width="900" height="1397" loading="lazy" style="object-position:45% 35%"></div>
         <div class="body">
           <h3>Funcional</h3>
           <div class="lcd"><span class="d">Todos los días</span><span class="t">6:00 PM</span></div>
-          <p>Fuerza, resistencia y movilidad en grupo, guiado por los profes.</p>
+          <p>Fuerza, resistencia y movilidad en grupo, con la guía de los profes.</p>
           <a class="btn btn-ghost btn-sm" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20ir%20a%20la%20clase%20de%20funcional%20de%20las%206%3A00%20PM.%20%C2%BFMe%20confirman%20el%20cupo%20y%20me%20env%C3%ADan%20la%20ubicaci%C3%B3n%3F" target="_blank" rel="noopener">Reservar cupo <span class="arr" aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="card class-card rv" data-d="1">
-        <div class="pic"><img src="img/rumba-clase.jpg" alt="Clase de rumba en R3GIMEN GYM con alumnos bailando bajo luces LED y globos de colores" width="1400" height="1102" loading="lazy" style="object-position:40% 45%"></div>
+        <div class="pic"><img src="img/rumba-clase.jpg" alt="Clase de rumba en la edición ochentera de R3GIMEN GYM, con alumnos bailando bajo luces LED y globos de colores" width="1400" height="1102" loading="lazy" style="object-position:40% 45%"></div>
         <div class="body">
           <h3>Rumba</h3>
           <div class="lcd"><span class="d">Lunes y jueves</span><span class="t">7:00 PM</span></div>
-          <p>Cardio con música y buena energía. Pregunta por las ediciones temáticas.</p>
+          <p>Cardio con música y buena energía. En la foto, la edición ochentera.</p>
           <a class="btn btn-ghost btn-sm" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20ir%20a%20la%20clase%20de%20rumba%20%28lunes%20o%20jueves%2C%207%3A00%20PM%29.%20%C2%BFMe%20confirman%20el%20cupo%20y%20me%20env%C3%ADan%20la%20ubicaci%C3%B3n%3F" target="_blank" rel="noopener">Reservar cupo <span class="arr" aria-hidden="true">→</span></a>
         </div>
       </article>
@@ -464,7 +468,7 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
       <ol class="steps rv" data-d="1">
         <li><span>Llega a Arepas y Arepas, en Cabañas.</span></li>
         <li><span>Mira al frente: fachada negra con el letrero <strong>R3GIMEN GYM SEMIPERSONALIZADO</strong> y el triángulo azul.</span></li>
-        <li><span>¿No nos ves? <a href="https://wa.me/573217436913?text=Hola%2C%20estoy%20cerca%20de%20Arepas%20y%20Arepas%2C%20en%20Caba%C3%B1as%2C%20y%20no%20encuentro%20la%20entrada%20de%20R3GIMEN%20GYM.%20%C2%BFMe%20ayudan%3F" target="_blank" rel="noopener">Escríbenos</a> y te guiamos.</span></li>
+        <li><span>¿No nos ves? <a class="help" href="https://wa.me/573217436913?text=Hola%2C%20estoy%20cerca%20de%20Arepas%20y%20Arepas%2C%20en%20Caba%C3%B1as%2C%20y%20no%20encuentro%20la%20entrada%20de%20R3GIMEN%20GYM.%20%C2%BFMe%20ayudan%3F" target="_blank" rel="noopener">Escríbenos</a> y te guiamos.</span></li>
       </ol>
       <div class="cta-row rv" data-d="2">
         <a class="btn btn-primary" data-loc="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Arepas%20y%20Arepas%20Caba%C3%B1as%20Bello%20Antioquia" target="_blank" rel="noopener">Abrir en Google Maps <span class="arr" aria-hidden="true">↗</span></a>
@@ -483,7 +487,7 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
         <div class="photo"><img src="img/fachada-gabo.jpg" alt="Fachada de R3GIMEN GYM: frente negro con el letrero R3GIMEN GYM SEMIPERSONALIZADO y el triángulo azul R3, con un entrenador señalándolo" width="1000" height="1331" loading="lazy"><div class="shade"></div><div class="scan" aria-hidden="true"></div></div>
         <figcaption><b>Así nos ves desde la calle</b><span>Cabañas, Bello · Al frente de Arepas y Arepas</span></figcaption>
       </figure>
-      <a class="textlink reel" href="https://www.instagram.com/r3gymengym/" target="_blank" rel="noopener">▶ Ver el video “cómo llegar” en Instagram <span class="arr" aria-hidden="true">↗</span></a>
+      <a class="textlink reel" href="https://www.instagram.com/r3gymengym/" target="_blank" rel="noopener">▶ Busca el video “cómo llegar” en nuestro Instagram <span class="arr" aria-hidden="true">↗</span></a>
       <a class="map rv" data-loc="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Arepas%20y%20Arepas%20Caba%C3%B1as%20Bello%20Antioquia" target="_blank" rel="noopener">
         <svg viewBox="0 0 400 290" role="img" aria-labelledby="map-t">
           <title id="map-t">Esquema: R3GIMEN GYM al frente de Arepas y Arepas, en el barrio Cabañas, Bello</title>
@@ -493,35 +497,30 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
           </defs>
           <rect width="400" height="290" fill="url(#dots)"/>
           <g aria-hidden="true">
-            <text x="372" y="34" class="lbl" text-anchor="middle">N</text>
-            <path d="M372 42 l-7 16 7-5 7 5z" fill="#7FA0FF"/>
+            <text x="374" y="30" class="lbl" text-anchor="middle">N</text>
+            <path d="M374 38 l-7 16 7-5 7 5z" fill="#7FA0FF"/>
           </g>
-          <!-- Ensenada Apartamentos: north-west of the gym -->
-          <circle cx="118" cy="62" r="5" fill="#C9D2E3"/>
-          <text x="130" y="67" class="lbl">Ensenada Apartamentos</text>
-          <!-- Deli Lotzo: east -->
-          <circle cx="268" cy="168" r="5" fill="#C9D2E3"/>
-          <text x="268" y="194" class="lbl" text-anchor="middle">Deli Lotzo</text>
-          <!-- Ciudad Central: further east, slightly south -->
-          <circle cx="336" cy="226" r="5" fill="#C9D2E3"/>
-          <text x="330" y="252" class="lbl" text-anchor="middle">Ciudad Central</text>
-          <!-- Arepas y Arepas: right next to the gym, west -->
-          <circle cx="58" cy="172" r="7" fill="#04060C" stroke="#C9D2E3" stroke-width="1.6"/>
-          <path d="M55 168v8M58 168v8M61 168v3a1.5 1.5 0 0 1-3 0" stroke="#C9D2E3" stroke-width="1" fill="none"/>
-          <text x="58" y="200" class="lbl-strong" text-anchor="middle">Arepas y Arepas</text>
-          <path class="conn" d="M68 172 H136"/>
-          <text x="102" y="164" class="lbl-blue" text-anchor="middle">al frente</text>
-          <!-- R3GIMEN GYM pin -->
-          <circle cx="150" cy="172" r="26" fill="url(#halo)"/>
-          <circle class="ping" cx="150" cy="172" r="9" fill="none" stroke="#4FD3FF" stroke-width="1.5"/>
+          <circle cx="126" cy="58" r="6" fill="#C9D2E3"/>
+          <text x="140" y="64" class="lbl">Ensenada Apartamentos</text>
+          <circle cx="282" cy="176" r="6" fill="#C9D2E3"/>
+          <text x="282" y="206" class="lbl" text-anchor="middle">Deli Lotzo</text>
+          <circle cx="340" cy="236" r="6" fill="#C9D2E3"/>
+          <text x="326" y="266" class="lbl" text-anchor="middle">Ciudad Central</text>
+          <circle cx="70" cy="176" r="9" fill="#04060C" stroke="#EEF2FA" stroke-width="2"/>
+          <circle cx="70" cy="176" r="4" fill="#EEF2FA"/>
+          <text x="74" y="212" class="lbl-strong" text-anchor="middle">Arepas y Arepas</text>
+          <path class="conn" d="M84 176 H152"/>
+          <text x="118" y="166" class="lbl-blue" text-anchor="middle">al frente</text>
+          <circle cx="168" cy="176" r="30" fill="url(#halo)"/>
+          <circle class="ping" cx="168" cy="176" r="10" fill="none" stroke="#4FD3FF" stroke-width="1.5"/>
           <g class="pin">
-            <rect x="104" y="104" width="92" height="26" fill="#2E5BFF"/>
-            <text x="150" y="122" class="lbl-strong" text-anchor="middle">R3GIMEN GYM</text>
-            <path d="M138 140 H162 L150 162 Z" fill="#04060C" stroke="#7FA0FF" stroke-width="2" stroke-linejoin="round" style="filter:drop-shadow(0 0 6px #2E5BFF)"/>
-            <circle cx="150" cy="172" r="4" fill="#4FD3FF"/>
+            <rect x="114" y="100" width="108" height="30" fill="#2E5BFF"/>
+            <text x="168" y="121" class="lbl-strong" text-anchor="middle">R3GIMEN GYM</text>
+            <path d="M154 138 H182 L168 164 Z" fill="#04060C" stroke="#7FA0FF" stroke-width="2" stroke-linejoin="round" style="filter:drop-shadow(0 0 6px #2E5BFF)"/>
+            <circle cx="168" cy="176" r="4.5" fill="#4FD3FF"/>
           </g>
         </svg>
-        <span class="map-foot"><span>Esquema de referencia · no a escala</span><span class="open">Abrir mapa real ↗</span></span>
+        <span class="map-foot"><span>Esquema · no a escala</span><span class="open">Abrir Arepas y Arepas en Maps ↗</span></span>
       </a>
     </div>
   </div>
@@ -534,12 +533,12 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
       <p class="rv" data-d="1">Máquinas, peso libre, cardio y zona funcional, bajo la luz azul que ya es nuestra firma.</p>
     </div>
     <div class="bento">
-      <figure class="s2x2 rv"><img src="img/sala-amplia.jpg" alt="Sala de entrenamiento de R3GIMEN GYM con luces LED en el techo, máquinas de pesas y personas entrenando" width="1600" height="1211" loading="lazy" style="object-position:45% 40%"><figcaption>La sala</figcaption></figure>
+      <figure class="s2x2 rv"><img src="img/sala-amplia.jpg" alt="Mujer de pie en la sala de entrenamiento de R3GIMEN GYM, con luces LED en el techo, máquinas de pesas y personas entrenando al fondo" width="1600" height="1211" loading="lazy" style="object-position:45% 40%"><figcaption>La sala</figcaption></figure>
       <figure class="s2x1 rv" data-d="1"><img src="img/neon-interior.jpg" alt="Gran logo R3 de neón azul en la pared de R3GIMEN GYM con un entrenador señalándolo" width="1000" height="622" loading="lazy" style="object-position:55% 45%"><figcaption>Nuestra firma</figcaption></figure>
       <figure class="rv" data-d="2"><img src="img/trampolin.jpg" alt="Mini trampolines naranjas en la zona funcional" width="900" height="1018" loading="lazy" style="object-position:50% 60%"><figcaption>Zona funcional</figcaption></figure>
       <figure class="rv" data-d="3"><img src="img/ventana.jpg" alt="Mujer haciendo jalón en polea junto a un ventanal con luz natural" width="1000" height="567" loading="lazy" style="object-position:35% 45%"><figcaption>Luz natural</figcaption></figure>
       <figure class="rv"><img src="img/sentadilla.jpg" alt="Hombre haciendo sentadilla en máquina Smith mientras el entrenador lo observa en el espejo" width="1200" height="1093" loading="lazy" style="object-position:45% 40%"><figcaption>Técnica supervisada</figcaption></figure>
-      <figure class="s2x1 rv" data-d="1"><img src="img/sentadilla-smith.jpg" alt="Mujer con la barra de la máquina Smith sobre los hombros antes de una sentadilla" width="1400" height="1100" loading="lazy" style="object-position:45% 35%"><figcaption>Peso libre y Smith</figcaption></figure>
+      <figure class="s2x1 rv" data-d="1"><img src="img/sentadilla-smith.jpg" alt="Mujer con la barra de la máquina Smith sobre los hombros antes de una sentadilla" width="1400" height="1100" loading="lazy" style="object-position:45% 35%"><figcaption>Máquina Smith</figcaption></figure>
       <figure class="rv" data-d="2"><img src="img/persistencia.jpg" alt="Joven entrenando hombro en la máquina pec deck" width="1200" height="904" loading="lazy" style="object-position:55% 25%"><figcaption>Máquinas</figcaption></figure>
     </div>
   </div>
@@ -549,7 +548,7 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
   <div class="wrap coaches-wrap">
     <div>
       <h2 class="display h2 rv">Tus<br><span class="glow">profes</span></h2>
-      <p class="muted rv" data-d="1" style="margin:24px 0 0;max-width:36ch;font-size:18px">Siempre hay alguien en sala para orientarte, ajustar tu rutina y cuidar tu técnica.</p>
+      <p class="muted rv" data-d="1" style="margin:24px 0 0;max-width:36ch;font-size:18px">Un entrenador en sala te orienta, ajusta tu rutina y cuida tu técnica.</p>
     </div>
     <div class="coaches">
       <article class="card coach rv"><div class="pic"><img src="img/kevin.jpg" alt="Profe Kevin de R3GIMEN GYM" width="900" height="1126" loading="lazy"></div><div class="body"><h3>Kevin</h3><span class="tech">Profe</span></div></article>
@@ -560,11 +559,11 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
 
 <section class="ally" aria-labelledby="ally-title">
   <div class="wrap">
-    <div class="pic rv"><img src="img/fisio.jpg" alt="Fisioterapeuta aliado en la sala de R3GIMEN GYM" width="1000" height="591" loading="lazy"></div>
+    <div class="pic rv"><img src="img/fisio.jpg" alt="Fisioterapeuta con uniforme azul marino junto a una mujer en la sala de máquinas de R3GIMEN GYM" width="1000" height="591" loading="lazy"></div>
     <div class="rv" data-d="1">
       <h2 id="ally-title">Un cuerpo más fuerte,<br>sano y en equilibrio</h2>
-      <p>De la mano de Performance Fisioterapia: optimiza tu potencial, previene lesiones o rehabilítate con nuestro aliado en fisioterapia.</p>
-      <a class="btn btn-ghost" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20fisioterapia%20con%20Performance." target="_blank" rel="noopener">Preguntar por fisioterapia <span class="arr" aria-hidden="true">→</span></a>
+      <p>Nuestro aliado es Performance Fisioterapia. Su propuesta: “optimiza tu potencial, previene lesiones o rehabilítate”.</p>
+      <a class="btn btn-ghost" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20fisioterapia%20con%20Performance%20Fisioterapia%20en%20R3GIMEN%20GYM." target="_blank" rel="noopener">Preguntar por fisioterapia <span class="arr" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -580,7 +579,7 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
         <figcaption><p class="display" style="font-size:clamp(34px,3.6vw,48px)">Así se vivió la<br><span class="glow">rumba ochentera</span></p></figcaption></figure>
       <figure class="rv" data-d="1"><img src="img/rumba-trio.jpg" alt="Tres asistentes con balacas de colores posando en la fiesta ochentera" width="1200" height="731" loading="lazy" style="object-position:50% 42%"></figure>
       <figure class="rv" data-d="2"><img src="img/rumba-selfie.jpg" alt="Socios tomándose una selfie entre globos en la rumba ochentera" width="1000" height="754" loading="lazy" style="object-position:55% 38%"></figure>
-      <figure class="rv" data-d="1"><img src="img/rumba-afro.jpg" alt="Hombre con peluca afro y balaca roja bailando en la rumba ochentera" width="1000" height="711" loading="lazy" style="object-position:53% 28%"></figure>
+      <figure class="rv" data-d="1"><img src="img/rumba-afro.jpg" alt="Hombre con peluca afro y balaca roja posando en la rumba ochentera" width="1000" height="711" loading="lazy" style="object-position:53% 28%"></figure>
       <figure class="rv" data-d="2"><img src="img/retrato.jpg" alt="Mujer sonriente en la recepción de R3GIMEN GYM iluminada por luces azules" width="1000" height="902" loading="lazy" style="object-position:45% 30%"></figure>
       <blockquote class="quote rv" data-d="3"><p>La constancia tiene su propia forma de hablar.</p><span class="tech">@r3gymengym</span></blockquote>
     </div>
@@ -663,6 +662,7 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
 
   var root = document.documentElement, body = document.body;
   body.classList.remove('no-js');
+  setTimeout(function () { var h = document.querySelector('.h1'); if (h) h.classList.add('settled'); }, 1400);
 
   var mapsUrl = LOC.placeUrl || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(LOC.query);
   document.querySelectorAll('[data-loc="maps"]').forEach(function (a) { a.href = mapsUrl; });
@@ -707,7 +707,7 @@ footer nav a{font-family:var(--tech);font-size:12px;font-weight:600;letter-spaci
       go.href = near ? mapsUrl : '#llegar';
       if (near) { go.target = '_blank'; go.rel = 'noopener'; } else { go.removeAttribute('target'); go.removeAttribute('rel'); }
       goLabel.textContent = near ? 'Abrir mapa ↗' : 'Cómo llegar';
-    }, { threshold: 0.3 }).observe(document.getElementById('llegar'));
+    }, { rootMargin: '-35% 0px -35% 0px' }).observe(document.getElementById('llegar'));
   } else {
     body.classList.add('no-js');
     var mb = document.querySelector('.mbar'); if (mb) mb.classList.add('on');
