@@ -11,8 +11,8 @@
 <meta property="og:locale" content="es_CO">
 <meta property="og:site_name" content="R3GIMEN GYM">
 <meta property="og:url" content="https://r3gimen-gym.vercel.app/">
-<meta property="og:title" content="R3GIMEN GYM · Al frente de Arepas y Arepas, Cabañas">
-<meta property="og:description" content="Gimnasio semipersonalizado nuevo en Cabañas, Bello. Mira cómo llegar y escríbenos por WhatsApp.">
+<meta property="og:title" content="R3GIMEN GYM · Gimnasio semipersonalizado en Cabañas, Bello">
+<meta property="og:description" content="Rutina a tu objetivo con entrenador en sala. Funcional y rumba. Estamos al frente de Arepas y Arepas.">
 <meta property="og:image" content="https://r3gimen-gym.vercel.app/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -32,12 +32,11 @@
   --blue:#2E5BFF;--blue-hi:#7FA0FF;--cyan:#4FD3FF;--text:#EEF2FA;--muted:#A3AEC6;--chrome:#C9D2E3;
   --ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1);
   --display:'Big Shoulders Display','Arial Narrow',sans-serif;--tech:'Chakra Petch',monospace;--body:'Barlow',system-ui,sans-serif;
-  --bar:0px;
 }
 *{box-sizing:border-box}
 html{scrollbar-color:#22305A var(--bg);scroll-padding-top:84px}
 @media (prefers-reduced-motion:no-preference){html.ready{scroll-behavior:smooth}}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:var(--bar)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
 ::selection{background:var(--blue);color:#fff}
@@ -62,7 +61,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(4,6,12,.94);border-botto
 .links{display:flex;gap:30px}
 .links a{font-family:var(--tech);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color 200ms ease}
 .links a:hover{color:var(--text)}
-.links a.hot{color:var(--blue-hi)}
 @media (max-width:960px){.links{display:none}}
 
 /* buttons */
@@ -73,14 +71,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(4,6,12,.94);border-botto
 .btn-ghost{background:rgba(46,91,255,.08);color:var(--text);border-color:var(--line2)}
 .btn-sm{--h:44px;padding:0 18px;font-size:12px}
 .btn .arr{display:inline-block;transition:transform 200ms var(--ease-out)}
-.textlink{text-align:left;display:inline-block;background:none;border:0;padding:12px 0;color:var(--blue-hi);font:600 14px/1.45 var(--tech);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer}
-.textlink .arr{transition:transform 200ms var(--ease-out)}
 @media (hover:hover) and (pointer:fine){
   .btn-primary:hover{background:#3F69FF;box-shadow:0 8px 30px rgba(46,91,255,.55)}
   .btn-ghost:hover{background:rgba(46,91,255,.18)}
-  .btn:hover .arr,.textlink:hover .arr,.chip:hover .arr{transform:translateX(4px)}
-  .textlink:hover{color:var(--cyan)}
-  .links a.hot:hover{color:var(--cyan)}
+  .btn:hover .arr{transform:translateX(4px)}
   footer nav a:hover{color:var(--text)}
   .faq summary:hover{color:var(--blue-hi)}
 }
@@ -105,11 +99,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(4,6,12,.94);border-botto
 @keyframes rise{from{transform:translateY(100%);filter:blur(8px)}to{transform:none;filter:blur(0)}}
 .lede{font-size:20px;max-width:46ch;color:var(--muted);margin:28px 0 0}
 .lede strong{color:var(--text);font-weight:600}
-.chip{display:inline-flex;align-items:center;gap:12px;margin-top:26px;padding:10px 16px 10px 12px;min-height:44px;border:1px solid var(--line2);background:rgba(46,91,255,.08);text-decoration:none;font:600 13px/1.45 var(--tech);letter-spacing:.1em;text-transform:uppercase;color:var(--chrome);transition:border-color 200ms ease,background-color 200ms ease}
-.chip svg{flex:none}
-.chip b{display:block;margin-top:3px;color:var(--text);font-weight:600}
-.chip .arr{color:var(--blue-hi);transition:transform 200ms var(--ease-out)}
-@media (hover:hover) and (pointer:fine){.chip:hover{border-color:var(--blue-hi);background:rgba(46,91,255,.16)}}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .ticks{display:flex;flex-wrap:wrap;gap:12px 26px;margin:38px 0 0;padding:22px 0 0;border-top:1px solid var(--line);list-style:none;font-family:var(--tech);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--chrome)}
 .ticks li{display:flex;align-items:center;gap:10px}
@@ -128,16 +117,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(4,6,12,.94);border-botto
 @keyframes draw{to{stroke-dashoffset:0}}
 .tri{position:absolute;width:118%;left:-9%;top:6%;opacity:.55;pointer-events:none}
 .tri path{fill:none;stroke:var(--blue);stroke-width:1.2;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2200ms var(--ease-in-out) 900ms forwards;filter:drop-shadow(0 0 10px var(--blue))}
-.inset{position:absolute;left:-44px;top:-36px;width:40%;border:1px solid var(--line2);background:var(--panel);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.6);text-decoration:none;animation:fade 800ms var(--ease-out) 900ms backwards;transition:border-color 300ms ease,transform 400ms var(--ease-out)}
-.inset img{width:100%;height:auto;aspect-ratio:4/3.4;object-fit:cover;object-position:50% 20%}
-.inset p{margin:0;padding:10px 12px;font-family:var(--tech);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--chrome);display:flex;align-items:center;gap:8px;line-height:1.4}
-.inset p .arr{margin-left:auto;color:var(--blue-hi)}
-@media (hover:hover) and (pointer:fine){.inset:hover{border-color:var(--blue-hi);transform:translateY(-4px)}}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);flex:none}
-@media (max-width:600px){.inset{left:-6px;top:-30px;width:46%}}
 
 /* marquee */
-.marquee{border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:18px 0}
+.marquee{border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:18px 16px}
 .marquee .track{display:flex;width:max-content;gap:40px;align-items:center;animation:marq 44s linear infinite}
 .marquee span{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:.06em;text-transform:uppercase;color:var(--chrome);white-space:nowrap}
 .marquee span.b{color:var(--blue-hi)}
@@ -191,55 +174,22 @@ section.block{padding:130px 0}
 .class-card p{margin:0;color:var(--muted)}
 .class-card .btn{align-self:flex-start;margin-top:auto}
 
-/* cómo llegar */
+/* ubicación */
 .arrive{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
 .arrive::before{content:"";position:absolute;left:-200px;top:-200px;width:700px;height:700px;background:radial-gradient(closest-side,rgba(46,91,255,.16),transparent 70%);pointer-events:none}
-.arrive-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
-@media (max-width:960px){.arrive-grid{display:flex;flex-direction:column;gap:0}.arrive-grid>div{display:contents}.arrive-grid .h2,.arrive-grid .intro{order:0}.arrive-grid .facade{order:1;margin-top:32px}.arrive-grid .steps-title,.arrive-grid .steps{order:2}.arrive-grid .cta-row,.arrive-grid .micro,.arrive-grid .share-row{order:3}.arrive-grid .reel,.arrive-grid .map{order:4}.arrive-grid .reel{margin-top:24px}}
+.arrive-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+@media (max-width:960px){.arrive-grid{grid-template-columns:1fr;gap:48px}}
 .arrive .h2{font-size:clamp(46px,6vw,88px)}
-.arrive .intro{font-size:20px;color:var(--muted);max-width:44ch;margin:26px 0 0}
+.arrive .intro{font-size:20px;color:var(--muted);max-width:40ch;margin:26px 0 0}
 .arrive .intro strong{color:var(--text);font-weight:600}
-.steps-title{margin:44px 0 6px;font-size:13px;color:var(--cyan)}
-.steps{list-style:none;margin:0;padding:0;counter-reset:s}
-.steps li{counter-increment:s;display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);font-size:18px}
-.steps li::before{content:"0" counter(s);font-family:var(--display);font-weight:900;font-size:40px;line-height:1;color:var(--blue-hi)}
-.steps a{color:var(--blue-hi);text-underline-offset:4px}
-.steps a.help{display:inline-block;padding:11px 2px;margin:-11px 0}
 .arrive .cta-row{margin-top:32px}
 .arrive .cta-row .btn{flex:1 1 auto}
-.micro{text-wrap:pretty;margin:16px 0 0;font-size:15px;color:var(--muted);max-width:52ch}
-.share-row{margin-top:10px}
-
-.facade{position:relative;margin:0}
-.facade .photo{position:relative;overflow:hidden;aspect-ratio:4/4.3;clip-path:polygon(24px 0,100% 0,100% calc(100% - 24px),calc(100% - 24px) 100%,0 100%,0 24px)}
-.facade .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1200ms var(--ease-out)}
+.facade{margin:0;width:100%;max-width:540px;justify-self:end}
+@media (max-width:960px){.facade{justify-self:start}}
+.facade .photo{overflow:hidden;aspect-ratio:1/1;clip-path:polygon(24px 0,100% 0,100% calc(100% - 24px),calc(100% - 24px) 100%,0 100%,0 24px)}
+.facade .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 16%;transition:transform 1200ms var(--ease-out)}
 .js .facade:not([data-visible]) .photo img{transform:scale(1.1)}
-.facade .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(4,6,12,.92))}
-.facade figcaption{position:absolute;left:24px;right:24px;bottom:22px}
-.facade figcaption b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(32px,3.4vw,46px);line-height:.95;text-transform:uppercase}
-.facade figcaption span{display:block;margin-top:8px;font:600 12px/1.3 var(--tech);letter-spacing:.14em;text-transform:uppercase;color:var(--chrome)}
-.facade .scan{position:absolute;left:0;right:0;height:30%;top:-30%;background:linear-gradient(180deg,transparent,rgba(79,211,255,.16),transparent);pointer-events:none}
-.js .facade[data-visible] .scan{animation:scan 1600ms var(--ease-in-out) 300ms 1 both}
-@keyframes scan{from{top:-30%}to{top:100%}}
-.reel{margin-top:14px}
-@media (max-width:600px){.facade .shade{display:none}.facade figcaption{position:static;margin-top:14px}}
-
-.map{display:block;margin-top:16px;text-decoration:none;border:1px solid var(--line2);background:#060B18;position:relative;overflow:hidden;transition:border-color 300ms ease}
-@media (hover:hover) and (pointer:fine){.map:hover{border-color:var(--blue-hi)}}
-.map svg{display:block;width:100%;height:auto}
-.map .lbl{font:600 17px var(--tech);letter-spacing:.04em;fill:#C9D2E3}
-.map .lbl-strong{font:800 19px var(--display);letter-spacing:.06em;fill:#fff}
-.map .lbl-blue{font:600 16px var(--tech);letter-spacing:.06em;fill:#7FA0FF}
-.map .conn{stroke:#7FA0FF;stroke-width:1.5;stroke-dasharray:4 5;fill:none;animation:march 1.2s linear infinite}
-@keyframes march{to{stroke-dashoffset:-9}}
-.map .pin{transform-box:fill-box;transform-origin:50% 100%}
-.js .map:not([data-visible]) .pin{opacity:0;transform:translateY(-18px)}
-.js .map[data-visible] .pin{transition:opacity 500ms ease 250ms,transform 700ms cubic-bezier(.34,1.56,.64,1) 250ms}
-.map .ping{transform-box:fill-box;transform-origin:center;animation:ping 2.4s var(--ease-out) infinite}
-@keyframes ping{from{transform:scale(.4);opacity:.9}to{transform:scale(2.6);opacity:0}}
-.map-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;padding:12px 14px;border-top:1px solid var(--line);font:600 12px/1.3 var(--tech);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.map-foot .open{color:var(--blue-hi)}
-@media (min-width:961px) and (max-width:1400px){.map-foot{padding-right:88px}}
+.facade figcaption{margin-top:16px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:15px}
 
 /* space bento */
 .bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:250px;grid-auto-flow:dense;gap:12px}
@@ -314,16 +264,8 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
 .wa{position:fixed;right:20px;bottom:20px;z-index:55;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:#25D366;color:#04060C;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform 160ms var(--ease-out)}
 .wa:active{transform:scale(.94)}
 
-/* mobile action bar */
-.mbar{position:fixed;left:0;right:0;bottom:0;z-index:56;display:none;grid-template-columns:repeat(3,minmax(0,1fr));background:rgba(6,10,22,.97);border-top:1px solid var(--line2);padding-bottom:env(safe-area-inset-bottom);transform:translateY(110%);transition:transform 220ms var(--ease-out)}
-.mbar.on{transform:none}
-.mbar a,.mbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:8px 4px;background:none;border:0;color:var(--chrome);font:600 12px/1.1 var(--tech);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer}
-.mbar a:active,.mbar button:active{background:rgba(46,91,255,.14)}
-.mbar .main{color:#fff;background:var(--blue)}
-.mbar .main:active{background:#3F69FF}
-@media (max-width:960px){.mbar{display:grid}.wa,.nav>.btn{display:none}:root{--bar:calc(62px + env(safe-area-inset-bottom))}html{scroll-padding-bottom:calc(var(--bar) + 12px)}}
-.no-js .mbar{transform:none}
-@media (max-width:420px){.btn{letter-spacing:.08em;padding:0 18px}.chip{font-size:12px;letter-spacing:.06em}}
+@media (max-width:420px){.btn{letter-spacing:.08em;padding:0 18px}}
+@media (max-width:380px){.nav>.btn{display:none}}
 
 /* reveal */
 .js .rv:not([data-visible]){opacity:0;transform:translateY(22px);filter:blur(6px)}
@@ -334,10 +276,10 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:1ms !important;animation-delay:0ms !important;animation-iteration-count:1 !important}
-  .floor,.marquee .track,.map .ping,.map .conn,.facade .scan{animation:none !important}
-  .js .rv:not([data-visible]),.js .map:not([data-visible]) .pin,.js .facade:not([data-visible]) .photo img{transform:none;filter:none}
+  .floor,.marquee .track{animation:none !important}
+  .js .rv:not([data-visible]),.js .facade:not([data-visible]) .photo img{transform:none;filter:none}
   .js .rv[data-visible]:not([data-done]){transition:opacity 200ms ease}
-  .card,.bento img,.coach .pic img,.community img,.btn,.mbar,.facade .photo img{transition:none}
+  .card,.bento img,.coach .pic img,.community img,.btn,.facade .photo img{transition:none}
 }
 </style>
 </head>
@@ -353,9 +295,9 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
     <nav class="links" aria-label="Principal">
       <a href="#metodo">Método</a>
       <a href="#clases">Clases</a>
-      <a class="hot" href="#llegar">Cómo llegar</a>
       <a href="#espacio">El espacio</a>
       <a href="#profes">Profes</a>
+      <a href="#ubicacion">Ubicación</a>
     </nav>
     <a class="btn btn-primary btn-sm" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20R3GIMEN%20GYM." target="_blank" rel="noopener">WhatsApp</a>
   </div>
@@ -372,11 +314,6 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
         <span class="ln"><span class="glow">empieza aquí</span></span>
       </h1>
       <p class="lede fade-in">Gimnasio <strong>semipersonalizado</strong> en Cabañas, Bello. Entrenas a tu ritmo con una rutina hecha para tu objetivo, mientras un entrenador en sala corrige tu técnica.</p>
-      <a class="chip fade-in" href="#llegar">
-        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2h12L8 14z" fill="none" stroke="#4FD3FF" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        <span>Nuevo en Cabañas<b>Al frente de Arepas y Arepas</b></span>
-        <span class="arr" aria-hidden="true">→</span>
-      </a>
       <div class="cta-row fade-in">
         <a class="btn btn-primary" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20agendar%20mi%20primera%20clase%20en%20R3GIMEN%20GYM." target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>
@@ -393,18 +330,14 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
       <svg class="tri" viewBox="0 0 100 90" aria-hidden="true"><path pathLength="1" d="M4 4 H96 L50 86 Z"/></svg>
       <div class="photo"><img src="img/coach-tecnica.webp" srcset="img/coach-tecnica-640.webp 640w, img/coach-tecnica.webp 1400w" sizes="(max-width:960px) 90vw, 540px" alt="Entrenador de R3GIMEN GYM supervisando de cerca a un joven durante un ejercicio en polea" width="1400" height="1334" fetchpriority="high"><div class="shade"></div></div>
       <svg class="trace" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M6 0 H100 V94 L94 100 H0 V6 Z"/></svg>
-      <a class="inset" href="#fachada">
-        <img src="img/fachada-gabo.webp" srcset="img/fachada-gabo-640.webp 640w, img/fachada-gabo.webp 1000w" sizes="(max-width:600px) 46vw, 220px" alt="" width="1000" height="1331" loading="lazy" decoding="async">
-        <p><span class="dot" aria-hidden="true"></span>Así nos ves desde la calle<span class="sr-only">: ver cómo llegar, al frente de Arepas y Arepas</span> <span class="arr" aria-hidden="true">→</span></p>
-      </a>
     </div>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>Esto es Régimen</span><span class="b">◢</span><span>Semipersonalizado</span><span class="b">◢</span><span>Fuerza</span><span class="b">◢</span><span>Funcional</span><span class="b">◢</span><span>Rumba</span><span class="b">◢</span><span>Cabañas, Bello</span><span class="b">◢</span><span>Al frente de Arepas y Arepas</span><span class="b">◢</span>
-    <span>Esto es Régimen</span><span class="b">◢</span><span>Semipersonalizado</span><span class="b">◢</span><span>Fuerza</span><span class="b">◢</span><span>Funcional</span><span class="b">◢</span><span>Rumba</span><span class="b">◢</span><span>Cabañas, Bello</span><span class="b">◢</span><span>Al frente de Arepas y Arepas</span><span class="b">◢</span>
+    <span>Esto es Régimen</span><span class="b">◢</span><span>Semipersonalizado</span><span class="b">◢</span><span>Fuerza</span><span class="b">◢</span><span>Funcional</span><span class="b">◢</span><span>Rumba</span><span class="b">◢</span><span>Cabañas, Bello</span><span class="b">◢</span>
+    <span>Esto es Régimen</span><span class="b">◢</span><span>Semipersonalizado</span><span class="b">◢</span><span>Fuerza</span><span class="b">◢</span><span>Funcional</span><span class="b">◢</span><span>Rumba</span><span class="b">◢</span><span>Cabañas, Bello</span><span class="b">◢</span>
   </div>
 </div>
 
@@ -465,73 +398,6 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
           <a class="btn btn-ghost btn-sm" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20ir%20a%20la%20clase%20de%20rumba%20%28lunes%20o%20jueves%2C%207%3A00%20PM%29.%20%C2%BFMe%20confirman%20el%20cupo%20y%20me%20env%C3%ADan%20la%20ubicaci%C3%B3n%3F" target="_blank" rel="noopener">Reservar cupo <span class="arr" aria-hidden="true">→</span></a>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<span id="ubicacion" aria-hidden="true"></span>
-<section class="block arrive" id="llegar" aria-labelledby="llegar-title">
-  <div class="wrap arrive-grid">
-    <div>
-      <h2 class="display h2 rv" id="llegar-title">Al frente de<br><span class="glow">Arepas y Arepas</span></h2>
-      <p class="intro rv" data-d="1">¿Ubicas Arepas y Arepas? Entonces ya sabes llegar: <strong>estamos justo al frente</strong>, en el barrio Cabañas de Bello. Somos nuevos en el barrio, por eso quizá todavía no nos has visto.</p>
-      <h3 class="tech steps-title rv">Cómo reconocernos</h3>
-      <ol class="steps rv" data-d="1">
-        <li><span>Llega a Arepas y Arepas, en Cabañas.</span></li>
-        <li><span>Mira al frente: fachada negra con el letrero <strong>R3GIMEN GYM SEMIPERSONALIZADO</strong> y el triángulo azul.</span></li>
-        <li><span>¿No nos ves? <a class="help" href="https://wa.me/573217436913?text=Hola%2C%20estoy%20cerca%20de%20Arepas%20y%20Arepas%2C%20en%20Caba%C3%B1as%2C%20y%20no%20encuentro%20la%20entrada%20de%20R3GIMEN%20GYM.%20%C2%BFMe%20ayudan%3F" target="_blank" rel="noopener">Escríbenos</a> y te guiamos.</span></li>
-      </ol>
-      <div class="cta-row rv" data-d="2">
-        <a class="btn btn-primary" data-loc="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Arepas%20y%20Arepas%20Caba%C3%B1as%20Bello%20Antioquia" target="_blank" rel="noopener">Abrir en Google Maps <span class="arr" aria-hidden="true">↗</span></a>
-        <a class="btn btn-ghost" data-loc="waze" href="https://waze.com/ul?q=Arepas%20y%20Arepas%20Caba%C3%B1as%20Bello&amp;navigate=yes" target="_blank" rel="noopener">Abrir en Waze <span class="arr" aria-hidden="true">↗</span></a>
-        <a class="btn btn-ghost" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20ir%20a%20R3GIMEN%20GYM.%20%C2%BFMe%20env%C3%ADan%20la%20ubicaci%C3%B3n%20exacta%3F" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>
-          Pedir ubicación exacta</a>
-      </div>
-      <p class="micro rv" data-d="2" id="loc-note">Maps y Waze te llevan a Arepas y Arepas. Nosotros estamos justo al frente.</p>
-      <div class="share-row rv" data-d="3">
-        <a class="textlink" data-share href="https://wa.me/?text=Mira%20este%20gym%20en%20Caba%C3%B1as%2C%20Bello%3A%20R3GIMEN%20GYM%2C%20al%20frente%20de%20Arepas%20y%20Arepas.%20%C2%BFEntrenamos%20juntos%3F%20https%3A%2F%2Fr3gimen-gym.vercel.app%2F%23llegar" target="_blank" rel="noopener">¿Vienes con alguien? Envíale cómo llegar <span class="arr" aria-hidden="true">→</span></a>
-      </div>
-    </div>
-    <div>
-      <figure class="facade rv" id="fachada">
-        <div class="photo"><img src="img/fachada-gabo.webp" srcset="img/fachada-gabo-640.webp 640w, img/fachada-gabo.webp 1000w" sizes="(max-width:960px) 90vw, 584px" alt="Fachada de R3GIMEN GYM: frente negro con el letrero R3GIMEN GYM SEMIPERSONALIZADO y el triángulo azul R3, con un entrenador señalándolo" width="1000" height="1331" loading="lazy"><div class="shade"></div><div class="scan" aria-hidden="true"></div></div>
-        <figcaption><b>Así nos ves desde la calle</b><span>Cabañas, Bello · Al frente de Arepas y Arepas</span></figcaption>
-      </figure>
-      <a class="textlink reel" href="https://www.instagram.com/r3gymengym/" target="_blank" rel="noopener"><span aria-hidden="true">▶ </span>Busca el video “cómo llegar” en nuestro Instagram <span class="arr" aria-hidden="true">↗</span></a>
-      <a class="map rv" data-loc="maps" aria-label="Abrir Arepas y Arepas en Google Maps (se abre en otra pestaña). Esquema: R3GIMEN GYM está al frente." href="https://www.google.com/maps/search/?api=1&amp;query=Arepas%20y%20Arepas%20Caba%C3%B1as%20Bello%20Antioquia" target="_blank" rel="noopener">
-        <svg viewBox="0 0 400 290" aria-hidden="true" focusable="false">
-          <defs>
-            <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(127,160,255,.18)"/></pattern>
-            <radialGradient id="halo"><stop offset="0" stop-color="#2E5BFF" stop-opacity=".45"/><stop offset="1" stop-color="#2E5BFF" stop-opacity="0"/></radialGradient>
-          </defs>
-          <rect width="400" height="290" fill="url(#dots)"/>
-          <g aria-hidden="true">
-            <text x="374" y="30" class="lbl" text-anchor="middle">N</text>
-            <path d="M374 38 l-7 16 7-5 7 5z" fill="#7FA0FF"/>
-          </g>
-          <circle cx="126" cy="58" r="6" fill="#C9D2E3"/>
-          <text x="140" y="64" class="lbl">Ensenada Apartamentos</text>
-          <circle cx="282" cy="176" r="6" fill="#C9D2E3"/>
-          <text x="282" y="206" class="lbl" text-anchor="middle">Deli Lotzo</text>
-          <circle cx="340" cy="236" r="6" fill="#C9D2E3"/>
-          <text x="326" y="266" class="lbl" text-anchor="middle">Ciudad Central</text>
-          <circle cx="70" cy="176" r="9" fill="#04060C" stroke="#EEF2FA" stroke-width="2"/>
-          <circle cx="70" cy="176" r="4" fill="#EEF2FA"/>
-          <text x="74" y="212" class="lbl-strong" text-anchor="middle">Arepas y Arepas</text>
-          <path class="conn" d="M84 176 H152"/>
-          <text x="118" y="166" class="lbl-blue" text-anchor="middle">al frente</text>
-          <circle cx="168" cy="176" r="30" fill="url(#halo)"/>
-          <circle class="ping" cx="168" cy="176" r="10" fill="none" stroke="#4FD3FF" stroke-width="1.5"/>
-          <g class="pin">
-            <rect x="100" y="98" width="136" height="34" fill="#2E5BFF"/>
-            <text x="168" y="122" class="lbl-strong" text-anchor="middle">R3GIMEN GYM</text>
-            <path d="M154 138 H182 L168 164 Z" fill="#04060C" stroke="#7FA0FF" stroke-width="2" stroke-linejoin="round" style="filter:drop-shadow(0 0 6px #2E5BFF)"/>
-            <circle cx="168" cy="176" r="4.5" fill="#4FD3FF"/>
-          </g>
-        </svg>
-        <span class="map-foot"><span>Esquema · no a escala</span><span class="open">Abrir Arepas y Arepas en Maps <span aria-hidden="true">↗</span></span></span>
-      </a>
     </div>
   </div>
 </section>
@@ -601,10 +467,6 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
     <h2 class="display h2 rv">Antes de<br><span class="glow">venir</span></h2>
     <div class="rv" data-d="1">
       <details open>
-        <summary>¿Dónde queda R3GIMEN GYM? <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" stroke="#7FA0FF" stroke-width="2"><path d="M9 1v16M1 9h16"/></svg></summary>
-        <div class="ans"><p>En el barrio Cabañas, en Bello, al frente de Arepas y Arepas. Busca la fachada negra con el letrero R3GIMEN GYM. Si quieres, te enviamos la ubicación exacta por WhatsApp.</p><a class="textlink" href="#llegar">Ver cómo llegar <span class="arr" aria-hidden="true">→</span></a></div>
-      </details>
-      <details>
         <summary>¿Qué es un gimnasio semipersonalizado? <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" stroke="#7FA0FF" stroke-width="2"><path d="M9 1v16M1 9h16"/></svg></summary>
         <div class="ans"><p>Entrenas de forma autónoma con una rutina adaptada a tu objetivo, mientras un entrenador en la zona supervisa y corrige tu técnica. Ajustamos ejercicios y cargas a medida que avanzas.</p></div>
       </details>
@@ -620,17 +482,36 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
   </div>
 </section>
 
+<section class="block arrive" id="ubicacion" aria-labelledby="ubicacion-title">
+  <span id="llegar" aria-hidden="true"></span>
+  <div class="wrap arrive-grid">
+    <div>
+      <h2 class="display h2 rv" id="ubicacion-title">¿Dónde<br><span class="glow">estamos?</span></h2>
+      <p class="intro rv" data-d="1">En el barrio Cabañas, en Bello, <strong>justo al frente de Arepas y Arepas</strong>. Busca la fachada negra con el letrero R3GIMEN GYM.</p>
+      <div class="cta-row rv" data-d="2">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Arepas%20y%20Arepas%20Caba%C3%B1as%20Bello%20Antioquia" target="_blank" rel="noopener">Ver en Google Maps <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn btn-ghost" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20ir%20a%20R3GIMEN%20GYM.%20%C2%BFMe%20env%C3%ADan%20la%20ubicaci%C3%B3n%3F" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          Pedir la ubicación</a>
+      </div>
+    </div>
+    <figure class="facade rv" data-d="1">
+      <div class="photo"><img src="img/fachada-gabo.webp" srcset="img/fachada-gabo-640.webp 640w, img/fachada-gabo.webp 1000w" sizes="(max-width:960px) 90vw, 540px" alt="Fachada de R3GIMEN GYM: frente negro con el letrero R3GIMEN GYM SEMIPERSONALIZADO y el triángulo azul R3, con un entrenador señalándolo" width="1000" height="1331" loading="lazy"></div>
+      <figcaption><span class="dot" aria-hidden="true"></span>Así se ve desde la calle</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="final">
   <img src="img/sentadilla.webp" srcset="img/sentadilla-640.webp 640w, img/sentadilla.webp 1200w" sizes="100vw" alt="" loading="lazy" width="1200" height="1093">
   <div class="shade"></div>
   <div class="wrap">
     <h2 class="display rv" style="font-size:clamp(50px,7.6vw,120px)">Nadie va a venir<br><span class="glow">a levantar el peso por ti</span></h2>
-    <p class="lede rv" data-d="1">El esfuerzo de hoy es la única cuota inicial para los cambios que quieres ver en el espejo. Cuéntanos tu objetivo y te esperamos en Cabañas, al frente de Arepas y Arepas.</p>
+    <p class="lede rv" data-d="1">El esfuerzo de hoy es la única cuota inicial para los cambios que quieres ver en el espejo. Cuéntanos tu objetivo y te esperamos.</p>
     <div class="cta-row rv" data-d="2">
       <a class="btn btn-primary" href="https://wa.me/573217436913?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20R3GIMEN%20GYM%20y%20quiero%20empezar.%20Mi%20objetivo%20es%3A%20" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>
         Escríbenos: 321 743 6913</a>
-      <a class="btn btn-ghost" href="#llegar">Ver cómo llegar <span class="arr" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -639,7 +520,7 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
 <footer>
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="R3GIMEN GYM, volver arriba"><img src="img/logo-mark.png" alt="" width="58" height="30"><span>R3GIMEN GYM<small>SEMIPERSONALIZADO</small></span></a>
-    <a class="where" href="#llegar">Cabañas, Bello · Al frente de Arepas y Arepas</a>
+    <a class="where" href="#ubicacion">Cabañas, Bello · Al frente de Arepas y Arepas</a>
     <nav aria-label="Redes">
       <a href="https://www.instagram.com/r3gymengym/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://wa.me/573217436913" target="_blank" rel="noopener">WhatsApp</a>
@@ -649,46 +530,13 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>
 </a>
 </footer>
-<nav class="mbar" aria-label="Acciones rápidas">
-  <a class="main" href="#llegar" data-mbar-go>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-    <span><span data-mbar-label>Cómo llegar</span><span data-mbar-ext aria-hidden="true" hidden> ↗</span></span></a>
-  <a href="https://wa.me/573217436913?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20de%20R3GIMEN%20GYM.%20%C2%BFMe%20env%C3%ADan%20informaci%C3%B3n%20y%20la%20ubicaci%C3%B3n%3F" target="_blank" rel="noopener">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>
-    <span>WhatsApp</span></a>
-  <a data-share href="https://wa.me/?text=Mira%20este%20gym%20en%20Caba%C3%B1as%2C%20Bello%3A%20R3GIMEN%20GYM%2C%20al%20frente%20de%20Arepas%20y%20Arepas.%20%C2%BFEntrenamos%20juntos%3F%20https%3A%2F%2Fr3gimen-gym.vercel.app%2F%23llegar" target="_blank" rel="noopener">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
-    <span>Compartir</span></a>
-</nav>
 
 <script>
 (function () {
-  // Location config: fill placeUrl (Google Maps "Compartir" link of the gym's own pin) and lat/lng once verified.
-  var LOC = { query: 'Arepas y Arepas Cabañas Bello Antioquia', placeUrl: null, lat: null, lng: null, reelUrl: null, waze: true };
-  var PAGE = 'https://r3gimen-gym.vercel.app/';
-  var SHARE_TEXT = 'Mira este gym en Cabañas, Bello: R3GIMEN GYM, al frente de Arepas y Arepas. ¿Entrenamos juntos? ';
-
   var root = document.documentElement, body = document.body;
   body.classList.remove('no-js');
   setTimeout(function () { var h = document.querySelector('.h1'); if (h) h.classList.add('settled'); }, 1400);
   addEventListener('load', function () { requestAnimationFrame(function () { root.classList.add('ready'); }); });
-
-  var mapsUrl = LOC.placeUrl || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(LOC.query);
-  document.querySelectorAll('[data-loc="maps"]').forEach(function (a) { a.href = mapsUrl; });
-  document.querySelectorAll('[data-loc="waze"]').forEach(function (a) {
-    if (!LOC.waze) { a.remove(); return; }
-    if (LOC.lat && LOC.lng) a.href = 'https://waze.com/ul?ll=' + LOC.lat + ',' + LOC.lng + '&navigate=yes';
-  });
-  if (LOC.placeUrl) { var note = document.getElementById('loc-note'); if (note) note.textContent = 'El mapa te lleva directo a nuestra puerta.'; }
-  if (LOC.reelUrl) document.querySelectorAll('.reel').forEach(function (a) { a.href = LOC.reelUrl; });
-
-  document.querySelectorAll('[data-share]').forEach(function (btn) {
-    btn.addEventListener('click', function (ev) {
-      if (!navigator.share) return;
-      ev.preventDefault();
-      navigator.share({ title: 'R3GIMEN GYM', text: SHARE_TEXT, url: PAGE + '#llegar' }).catch(function () {});
-    });
-  });
 
   if ('IntersectionObserver' in window) {
     root.classList.add('js');
@@ -701,23 +549,9 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
         setTimeout(function () { el.setAttribute('data-done', ''); }, 1300);
       });
     }, { rootMargin: '0px 0px -10% 0px' });
-    document.querySelectorAll('.rv, .map').forEach(function (el) { io.observe(el); });
-
-    var bar = document.querySelector('.mbar');
-    var go = document.querySelector('[data-mbar-go]'), goLabel = document.querySelector('[data-mbar-label]'), goExt = document.querySelector('[data-mbar-ext]');
-    new IntersectionObserver(function (es) {
-      bar.classList.toggle('on', !es[0].isIntersecting);
-    }).observe(document.querySelector('.hero'));
-    new IntersectionObserver(function (es) {
-      var near = es[0].isIntersecting;
-      go.href = near ? mapsUrl : '#llegar';
-      if (near) { go.target = '_blank'; go.rel = 'noopener'; } else { go.removeAttribute('target'); go.removeAttribute('rel'); }
-      goLabel.textContent = near ? 'Abrir mapa' : 'Cómo llegar';
-      goExt.hidden = !near;
-    }, { rootMargin: '-35% 0px -35% 0px' }).observe(document.getElementById('llegar'));
+    document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
   } else {
     body.classList.add('no-js');
-    var mb = document.querySelector('.mbar'); if (mb) mb.classList.add('on');
   }
 
   var prog = document.querySelector('.progress'), ticking = false;
