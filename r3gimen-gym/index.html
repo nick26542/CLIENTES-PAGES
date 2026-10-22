@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gimnasio semipersonalizado en Cabañas, Bello · R3GIMEN GYM</title>
 <meta name="description" content="Gimnasio semipersonalizado en el barrio Cabañas, Bello, al frente de Arepas y Arepas. Rutina a tu objetivo, entrenador en sala, funcional y rumba.">
 <meta name="theme-color" content="#04060C">
@@ -46,7 +46,6 @@ a{color:inherit}
 .display{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.98;letter-spacing:.005em;margin:0}
 .glow{color:var(--blue-hi);text-shadow:0 0 18px rgba(46,91,255,.75),0 0 46px rgba(46,91,255,.45)}
 .muted{color:var(--muted)}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* progress */
 .progress{position:fixed;inset:0 0 auto 0;height:2px;z-index:60;background:linear-gradient(90deg,var(--blue),var(--cyan));transform-origin:left;transform:scaleX(0);box-shadow:0 0 12px var(--blue)}
@@ -175,7 +174,7 @@ section.block{padding:130px 0}
 .class-card .btn{align-self:flex-start;margin-top:auto}
 
 /* ubicación */
-.arrive{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.arrive{background:var(--bg2);border-top:1px solid var(--line);position:relative;overflow:hidden}
 .arrive::before{content:"";position:absolute;left:-200px;top:-200px;width:700px;height:700px;background:radial-gradient(closest-side,rgba(46,91,255,.16),transparent 70%);pointer-events:none}
 .arrive-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
 @media (max-width:960px){.arrive-grid{grid-template-columns:1fr;gap:48px}}
@@ -265,7 +264,7 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
 .wa:active{transform:scale(.94)}
 
 @media (max-width:420px){.btn{letter-spacing:.08em;padding:0 18px}}
-@media (max-width:380px){.nav>.btn{display:none}}
+@media (max-width:399px){.nav>.btn{display:none}}
 
 /* reveal */
 .js .rv:not([data-visible]){opacity:0;transform:translateY(22px);filter:blur(6px)}
@@ -492,7 +491,7 @@ footer nav a{transition:color 200ms ease;font-family:var(--tech);font-size:12px;
         <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Arepas%20y%20Arepas%20Caba%C3%B1as%20Bello%20Antioquia" target="_blank" rel="noopener">Ver en Google Maps <span class="arr" aria-hidden="true">↗</span></a>
         <a class="btn btn-ghost" href="https://wa.me/573217436913?text=Hola%2C%20quiero%20ir%20a%20R3GIMEN%20GYM.%20%C2%BFMe%20env%C3%ADan%20la%20ubicaci%C3%B3n%3F" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>
-          Pedir la ubicación</a>
+          Pedir ubicación por WhatsApp</a>
       </div>
     </div>
     <figure class="facade rv" data-d="1">
