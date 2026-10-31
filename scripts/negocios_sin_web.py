@@ -14,6 +14,7 @@ from scrapling.fetchers import Fetcher
 
 OVERPASS_URL = "https://overpass-api.de/api/interpreter"
 SALIDA = "negocios_sin_web_bogota.csv"
+SALIDA_TXT = "negocios_sin_web_bogota.txt"
 
 # Categorías de servicios -> descripción en español.
 CATEGORIAS = {
@@ -118,7 +119,8 @@ def main() -> None:
             "telefono": telefono,
             "direccion": direccion,
             "barrio": t.get("addr:suburb") or t.get("addr:neighbourhood", ""),
-            "facebook_instagram": t.get("contact:facebook") or t.get("contact:instagram", ""),
+            "instagram": t.get("contact:instagram") or t.get("instagram", ""),
+            "facebook": t.get("contact:facebook") or t.get("facebook", ""),
             "mapa": f"https://www.openstreetmap.org/{el['type']}/{el['id']}",
         })
 
@@ -127,7 +129,18 @@ def main() -> None:
         w = csv.DictWriter(f, fieldnames=list(filas[0]) if filas else ["nombre"])
         w.writeheader()
         w.writerows(filas)
-    print(f"{len(filas)} negocios guardados en {SALIDA}")
+    with open(SALIDA_TXT, "w", encoding="utf-8") as f:
+        for i, n in enumerate(filas, 1):
+            ubicacion = ", ".join(filter(None, [n["direccion"], n["barrio"]])) or "Sin dirección (ver mapa)"
+            f.write(
+                f"{i}. {n['nombre']}\n"
+                f"   Categoría: {n['de_que_trata']}\n"
+                f"   Teléfono: {n['telefono']}\n"
+                f"   Instagram: {n['instagram'] or 'No registrado'}\n"
+                f"   Ubicación: {ubicacion}\n"
+                f"   Mapa: {n['mapa']}\n\n"
+            )
+    print(f"{len(filas)} negocios guardados en {SALIDA} y {SALIDA_TXT}")
 
 
 if __name__ == "__main__":
