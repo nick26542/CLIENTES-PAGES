@@ -26,7 +26,11 @@ Prototipo web de la **Plataforma Digital de Fidelización y Agendamiento intelig
 
 Lo marcado **[Completar]** requiere datos del equipo (nombres, URL, resultados de UAT) y lo marcado **[Validar TSLB]** son propuestas que el equipo de salud debe aprobar.
 
-## Publicar en Vercel (entorno demo)
+## Demo publicada
+
+https://r3gimen-gym.vercel.app (proyecto de Vercel `r3gimen-gym`, apuntando a la carpeta `coil-donacion`).
+
+## Publicar en otro proyecto de Vercel
 
 1. Entrar a vercel.com → **Add New… → Project** → importar el repositorio `CLIENTES-PAGES`.
 2. En **Root Directory** elegir `coil-donacion`. Framework: **Other**. Sin comando de build.
