@@ -1,0 +1,37 @@
+{
+  "fecha": "2026-11-14T00:25:32.428Z",
+  "salida": [
+    {
+      "pantalla": "#/",
+      "violaciones": []
+    },
+    {
+      "pantalla": "#/evaluacion",
+      "violaciones": []
+    },
+    {
+      "pantalla": "#/agenda",
+      "violaciones": []
+    },
+    {
+      "pantalla": "#/aprende",
+      "violaciones": []
+    },
+    {
+      "pantalla": "#/aprende/mitos",
+      "violaciones": []
+    },
+    {
+      "pantalla": "#/aprende/antes",
+      "violaciones": []
+    },
+    {
+      "pantalla": "#/perfil",
+      "violaciones": []
+    },
+    {
+      "pantalla": "#/perfil/editar",
+      "violaciones": []
+    }
+  ]
+}

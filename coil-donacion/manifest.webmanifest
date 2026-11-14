@@ -1,0 +1,13 @@
+{
+  "name": "Gota · Dona sangre sin vueltas",
+  "short_name": "Gota",
+  "lang": "es-CL",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#faf6f2",
+  "theme_color": "#faf6f2",
+  "icons": [
+    { "src": "img/gota-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "img/gota-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

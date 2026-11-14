@@ -1,0 +1,252 @@
+{
+  "fecha": "2026-11-14T00:21:14.727Z",
+  "base": "http://localhost:4173/",
+  "resultados": [
+    {
+      "id": "PF-M01",
+      "nombre": "[movil] Carga la portada sin errores",
+      "ok": true,
+      "ms": 647
+    },
+    {
+      "id": "PF-M02",
+      "nombre": "[movil] Autoevaluación completa → resultado apto (Q)",
+      "ok": true,
+      "ms": 11694
+    },
+    {
+      "id": "PF-M03",
+      "nombre": "[movil] Registro valida campos obligatorios",
+      "ok": true,
+      "ms": 1295
+    },
+    {
+      "id": "PF-M04",
+      "nombre": "[movil] Agendamiento: lugar, día, hora y confirmación",
+      "ok": true,
+      "ms": 2312
+    },
+    {
+      "id": "PF-M05",
+      "nombre": "[movil] Recordatorio: descarga de calendario (.ics)",
+      "ok": true,
+      "ms": 35
+    },
+    {
+      "id": "PF-M06",
+      "nombre": "[movil] Enlaces de WhatsApp, Google Calendar y correo bien formados",
+      "ok": true,
+      "ms": 7
+    },
+    {
+      "id": "PF-M07",
+      "nombre": "[movil] Impide agendar dos horas a la vez",
+      "ok": true,
+      "ms": 9
+    },
+    {
+      "id": "PF-M08",
+      "nombre": "[movil] Reprogramar libera la hora anterior",
+      "ok": true,
+      "ms": 4393
+    },
+    {
+      "id": "PF-M09",
+      "nombre": "[movil] Registrar donación y calcular próxima fecha (mujer: 4 meses)",
+      "ok": true,
+      "ms": 5368
+    },
+    {
+      "id": "PF-M10",
+      "nombre": "[movil] Mitos: responde, muestra explicación y suma puntos",
+      "ok": true,
+      "ms": 930
+    },
+    {
+      "id": "PF-M11",
+      "nombre": "[movil] Guías educativas y perfil con insignias",
+      "ok": true,
+      "ms": 1601
+    },
+    {
+      "id": "PF-M12",
+      "nombre": "[movil] Las respuestas del cuestionario no quedan guardadas",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "id": "PF-M13",
+      "nombre": "[movil] Borrar mis datos (confirmación en dos toques)",
+      "ok": true,
+      "ms": 373
+    },
+    {
+      "id": "PF-M14",
+      "nombre": "[movil] Sin documento → X",
+      "ok": true,
+      "ms": 580
+    },
+    {
+      "id": "PF-M15",
+      "nombre": "[movil] 17 años sin autorización → F",
+      "ok": true,
+      "ms": 1603
+    },
+    {
+      "id": "PF-M16",
+      "nombre": "[movil] Durmió poco → J (permite agendar)",
+      "ok": true,
+      "ms": 1958
+    },
+    {
+      "id": "PF-M17",
+      "nombre": "[movil] Intervalo no cumplido → calcula fecha y agenda desde esa fecha",
+      "ok": true,
+      "ms": 7299
+    },
+    {
+      "id": "PF-M18",
+      "nombre": "[movil] Volver atrás en el cuestionario conserva la respuesta anterior",
+      "ok": true,
+      "ms": 1313
+    },
+    {
+      "id": "PF-M19",
+      "nombre": "[movil] Sin desborde horizontal en ninguna pantalla",
+      "ok": true,
+      "ms": 1086
+    },
+    {
+      "id": "PF-M20",
+      "nombre": "[movil] Objetivos táctiles de al menos 44 px",
+      "ok": true,
+      "ms": 257
+    },
+    {
+      "id": "PF-E01",
+      "nombre": "[escritorio] Carga la portada sin errores",
+      "ok": true,
+      "ms": 557
+    },
+    {
+      "id": "PF-E02",
+      "nombre": "[escritorio] Autoevaluación completa → resultado apto (Q)",
+      "ok": true,
+      "ms": 11472
+    },
+    {
+      "id": "PF-E03",
+      "nombre": "[escritorio] Registro valida campos obligatorios",
+      "ok": true,
+      "ms": 1139
+    },
+    {
+      "id": "PF-E04",
+      "nombre": "[escritorio] Agendamiento: lugar, día, hora y confirmación",
+      "ok": true,
+      "ms": 2113
+    },
+    {
+      "id": "PF-E05",
+      "nombre": "[escritorio] Recordatorio: descarga de calendario (.ics)",
+      "ok": true,
+      "ms": 45
+    },
+    {
+      "id": "PF-E06",
+      "nombre": "[escritorio] Enlaces de WhatsApp, Google Calendar y correo bien formados",
+      "ok": true,
+      "ms": 7
+    },
+    {
+      "id": "PF-E07",
+      "nombre": "[escritorio] Impide agendar dos horas a la vez",
+      "ok": true,
+      "ms": 9
+    },
+    {
+      "id": "PF-E08",
+      "nombre": "[escritorio] Reprogramar libera la hora anterior",
+      "ok": true,
+      "ms": 461
+    },
+    {
+      "id": "PF-E09",
+      "nombre": "[escritorio] Registrar donación y calcular próxima fecha (mujer: 4 meses)",
+      "ok": true,
+      "ms": 1455
+    },
+    {
+      "id": "PF-E10",
+      "nombre": "[escritorio] Mitos: responde, muestra explicación y suma puntos",
+      "ok": true,
+      "ms": 840
+    },
+    {
+      "id": "PF-E11",
+      "nombre": "[escritorio] Guías educativas y perfil con insignias",
+      "ok": true,
+      "ms": 1436
+    },
+    {
+      "id": "PF-E12",
+      "nombre": "[escritorio] Las respuestas del cuestionario no quedan guardadas",
+      "ok": true,
+      "ms": 2
+    },
+    {
+      "id": "PF-E13",
+      "nombre": "[escritorio] Borrar mis datos (confirmación en dos toques)",
+      "ok": true,
+      "ms": 371
+    },
+    {
+      "id": "PF-E14",
+      "nombre": "[escritorio] Sin documento → X",
+      "ok": true,
+      "ms": 580
+    },
+    {
+      "id": "PF-E15",
+      "nombre": "[escritorio] 17 años sin autorización → F",
+      "ok": true,
+      "ms": 1568
+    },
+    {
+      "id": "PF-E16",
+      "nombre": "[escritorio] Durmió poco → J (permite agendar)",
+      "ok": true,
+      "ms": 1949
+    },
+    {
+      "id": "PF-E17",
+      "nombre": "[escritorio] Intervalo no cumplido → calcula fecha y agenda desde esa fecha",
+      "ok": true,
+      "ms": 3709
+    },
+    {
+      "id": "PF-E18",
+      "nombre": "[escritorio] Volver atrás en el cuestionario conserva la respuesta anterior",
+      "ok": true,
+      "ms": 1300
+    },
+    {
+      "id": "PF-E19",
+      "nombre": "[escritorio] Sin desborde horizontal en ninguna pantalla",
+      "ok": true,
+      "ms": 1087
+    },
+    {
+      "id": "PF-E20",
+      "nombre": "[escritorio] Objetivos táctiles de al menos 44 px",
+      "ok": true,
+      "ms": 38
+    },
+    {
+      "id": "PF-X01",
+      "nombre": "Sin errores de JavaScript en consola durante todas las pruebas",
+      "ok": true,
+      "ms": 0
+    }
+  ]
+}

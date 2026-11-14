@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gota · Dona sangre sin vueltas</title>
+  <meta name="description" content="Revisa en un minuto si puedes donar sangre, agenda tu hora y recibe recordatorios. Prototipo del proyecto COIL de promoción de la donación de sangre.">
+  <meta name="theme-color" content="#faf6f2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Gota">
+  <meta property="og:title" content="Gota · Dona sangre sin vueltas">
+  <meta property="og:description" content="Autoevaluación de 1 minuto, agenda y recordatorios para donar sangre.">
+  <link rel="icon" href="img/gota.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/gota-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#vista">Saltar al contenido</a>
+  <div class="marco">
+    <aside class="costado" aria-label="Sobre este prototipo">
+      <a class="marca" href="#/">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c4.5 6.2 10 11.6 10 17.2A10 10 0 0 1 6 20.2C6 14.6 11.5 9.2 16 3Z" fill="var(--rojo)"/></svg>
+        Gota
+      </a>
+      <h2>Del <em>“¿podré?”</em> a tener hora, en una visita.</h2>
+      <p>Prototipo del proyecto COIL de promoción de la donación altruista de sangre, entre estudiantes de TSLB (Chile) e Ingeniería de Sistemas (Colombia).</p>
+      <p>La autoevaluación sigue el cuestionario y el árbol de decisión del equipo de salud. Los centros y horarios son de demostración.</p>
+      <p class="qr-nota">Pensado para usarse en el celular. En escritorio se muestra como vista previa.</p>
+    </aside>
+
+    <div class="app" id="app">
+      <main id="vista" class="vista" tabindex="-1"></main>
+      <nav class="nav" aria-label="Principal">
+        <ul>
+          <li><a href="#/" data-nav="inicio"><span data-icon="house"></span>Inicio</a></li>
+          <li><a href="#/aprende" data-nav="aprende"><span data-icon="book-open"></span>Aprende</a></li>
+          <li><a href="#/agenda" data-nav="agenda"><span data-icon="calendar-days"></span>Mi hora</a></li>
+          <li><a href="#/perfil" data-nav="perfil"><span data-icon="user"></span>Perfil</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <noscript>
+    <p style="padding:24px">Esta aplicación necesita JavaScript activado.</p>
+  </noscript>
+</body>
+</html>
