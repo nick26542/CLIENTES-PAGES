@@ -1,42 +1,42 @@
 {
-  "fecha": "2026-11-14T00:28:48.520Z",
+  "fecha": "2026-11-14T00:32:08.172Z",
   "base": "http://localhost:4173/",
   "resultados": [
     {
       "id": "PF-M01",
       "nombre": "[movil] Carga la portada sin errores",
       "ok": true,
-      "ms": 634
+      "ms": 637
     },
     {
       "id": "PF-M02",
       "nombre": "[movil] Autoevaluación completa → resultado apto (Q)",
       "ok": true,
-      "ms": 11702
+      "ms": 11706
     },
     {
       "id": "PF-M03",
       "nombre": "[movil] Registro valida campos obligatorios",
       "ok": true,
-      "ms": 1266
+      "ms": 1237
     },
     {
       "id": "PF-M04",
       "nombre": "[movil] Agendamiento: lugar, día, hora y confirmación",
       "ok": true,
-      "ms": 2327
+      "ms": 2295
     },
     {
       "id": "PF-M05",
       "nombre": "[movil] Recordatorio: descarga de calendario (.ics)",
       "ok": true,
-      "ms": 39
+      "ms": 38
     },
     {
       "id": "PF-M06",
       "nombre": "[movil] Enlaces de WhatsApp, Google Calendar y correo bien formados",
       "ok": true,
-      "ms": 7
+      "ms": 5
     },
     {
       "id": "PF-M07",
@@ -48,31 +48,31 @@
       "id": "PF-M08",
       "nombre": "[movil] Reprogramar libera la hora anterior",
       "ok": true,
-      "ms": 4412
+      "ms": 3911
     },
     {
       "id": "PF-M09",
       "nombre": "[movil] Registrar donación y calcular próxima fecha (mujer: 4 meses)",
       "ok": true,
-      "ms": 5318
+      "ms": 5296
     },
     {
       "id": "PF-M10",
       "nombre": "[movil] Mitos: responde, muestra explicación y suma puntos",
       "ok": true,
-      "ms": 921
+      "ms": 908
     },
     {
       "id": "PF-M11",
       "nombre": "[movil] Guías educativas y perfil con insignias",
       "ok": true,
-      "ms": 1602
+      "ms": 1571
     },
     {
       "id": "PF-M12",
       "nombre": "[movil] Las respuestas del cuestionario no quedan guardadas",
       "ok": true,
-      "ms": 2
+      "ms": 1
     },
     {
       "id": "PF-M13",
@@ -84,7 +84,7 @@
       "id": "PF-M14",
       "nombre": "[movil] Sin documento → X",
       "ok": true,
-      "ms": 595
+      "ms": 581
     },
     {
       "id": "PF-M15",
@@ -96,61 +96,61 @@
       "id": "PF-M16",
       "nombre": "[movil] Durmió poco → J (permite agendar)",
       "ok": true,
-      "ms": 1967
+      "ms": 1964
     },
     {
       "id": "PF-M17",
       "nombre": "[movil] Intervalo no cumplido → calcula fecha y agenda desde esa fecha",
       "ok": true,
-      "ms": 7315
+      "ms": 7263
     },
     {
       "id": "PF-M18",
       "nombre": "[movil] Volver atrás en el cuestionario conserva la respuesta anterior",
       "ok": true,
-      "ms": 1309
+      "ms": 1314
     },
     {
       "id": "PF-M19",
       "nombre": "[movil] Sin desborde horizontal en ninguna pantalla",
       "ok": true,
-      "ms": 1090
+      "ms": 1087
     },
     {
       "id": "PF-M20",
       "nombre": "[movil] Objetivos táctiles de al menos 44 px",
       "ok": true,
-      "ms": 255
+      "ms": 257
     },
     {
       "id": "PF-E01",
       "nombre": "[escritorio] Carga la portada sin errores",
       "ok": true,
-      "ms": 544
+      "ms": 549
     },
     {
       "id": "PF-E02",
       "nombre": "[escritorio] Autoevaluación completa → resultado apto (Q)",
       "ok": true,
-      "ms": 11482
+      "ms": 11434
     },
     {
       "id": "PF-E03",
       "nombre": "[escritorio] Registro valida campos obligatorios",
       "ok": true,
-      "ms": 1132
+      "ms": 1113
     },
     {
       "id": "PF-E04",
       "nombre": "[escritorio] Agendamiento: lugar, día, hora y confirmación",
       "ok": true,
-      "ms": 2121
+      "ms": 2120
     },
     {
       "id": "PF-E05",
       "nombre": "[escritorio] Recordatorio: descarga de calendario (.ics)",
       "ok": true,
-      "ms": 43
+      "ms": 44
     },
     {
       "id": "PF-E06",
@@ -162,25 +162,25 @@
       "id": "PF-E07",
       "nombre": "[escritorio] Impide agendar dos horas a la vez",
       "ok": true,
-      "ms": 10
+      "ms": 13
     },
     {
       "id": "PF-E08",
       "nombre": "[escritorio] Reprogramar libera la hora anterior",
       "ok": true,
-      "ms": 422
+      "ms": 440
     },
     {
       "id": "PF-E09",
       "nombre": "[escritorio] Registrar donación y calcular próxima fecha (mujer: 4 meses)",
       "ok": true,
-      "ms": 1476
+      "ms": 1497
     },
     {
       "id": "PF-E10",
       "nombre": "[escritorio] Mitos: responde, muestra explicación y suma puntos",
       "ok": true,
-      "ms": 843
+      "ms": 820
     },
     {
       "id": "PF-E11",
@@ -192,61 +192,61 @@
       "id": "PF-E12",
       "nombre": "[escritorio] Las respuestas del cuestionario no quedan guardadas",
       "ok": true,
-      "ms": 1
+      "ms": 2
     },
     {
       "id": "PF-E13",
       "nombre": "[escritorio] Borrar mis datos (confirmación en dos toques)",
       "ok": true,
-      "ms": 374
+      "ms": 373
     },
     {
       "id": "PF-E14",
       "nombre": "[escritorio] Sin documento → X",
       "ok": true,
-      "ms": 579
+      "ms": 581
     },
     {
       "id": "PF-E15",
       "nombre": "[escritorio] 17 años sin autorización → F",
       "ok": true,
-      "ms": 1585
+      "ms": 1567
     },
     {
       "id": "PF-E16",
       "nombre": "[escritorio] Durmió poco → J (permite agendar)",
       "ok": true,
-      "ms": 1949
+      "ms": 1962
     },
     {
       "id": "PF-E17",
       "nombre": "[escritorio] Intervalo no cumplido → calcula fecha y agenda desde esa fecha",
       "ok": true,
-      "ms": 3714
+      "ms": 3700
     },
     {
       "id": "PF-E18",
       "nombre": "[escritorio] Volver atrás en el cuestionario conserva la respuesta anterior",
       "ok": true,
-      "ms": 1298
+      "ms": 1316
     },
     {
       "id": "PF-E19",
       "nombre": "[escritorio] Sin desborde horizontal en ninguna pantalla",
       "ok": true,
-      "ms": 1091
+      "ms": 1090
     },
     {
       "id": "PF-E20",
       "nombre": "[escritorio] Objetivos táctiles de al menos 44 px",
       "ok": true,
-      "ms": 267
+      "ms": 268
     },
     {
       "id": "PF-X01",
       "nombre": "Sin errores de JavaScript en consola durante todas las pruebas",
       "ok": true,
-      "ms": 0
+      "ms": 1
     }
   ]
 }

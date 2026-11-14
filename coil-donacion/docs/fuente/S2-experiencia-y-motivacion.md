@@ -45,7 +45,7 @@ El prototipo visual se construyó directamente en HTML (mockup navegable), lo qu
 
 ![Mi hora, mitos, perfil e intervalo (celular)](../capturas/lamina-celular-2.png)
 
-**Sistema visual.** Fondo papel cálido, tinta rojo oscuro y un único acento rojo sangre, usado solo para lo que importa (acción principal, progreso). Tipografías Bricolage Grotesque (títulos) y Figtree (texto), ambas de licencia libre. Iconos Lucide con un solo grosor de trazo. Colores de resultado: verde (puedes continuar), azul (revisión profesional), ámbar (esperar o posponer) y rojo (no corresponde por ahora).
+**Sistema visual.** Fondo papel rosado (del mismo tono rojo que la tinta), tinta rojo oscuro y un único acento rojo sangre, usado solo para lo que importa (acción principal, progreso). Tipografías Bricolage Grotesque (títulos) y Figtree (texto), ambas de licencia libre. Iconos Lucide con un solo grosor de trazo. Colores de resultado: verde (puedes continuar), azul (revisión profesional), ámbar (esperar o posponer) y rojo (no corresponde por ahora).
 
 ## 4. Traducción del árbol de decisión TSLB a lógica de aplicación
 

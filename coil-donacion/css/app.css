@@ -14,10 +14,10 @@
 }
 
 :root {
-  /* Papel cálido, tinta roja oscura, rojo sangre como único acento. */
-  --papel: oklch(97.6% 0.008 60);
-  --papel-2: oklch(94.6% 0.014 45);
-  --linea: oklch(88% 0.018 30);
+  /* Papel rosado del mismo tono que la tinta, tinta roja oscura, rojo sangre como único acento. */
+  --papel: oklch(97.8% 0.009 15);
+  --papel-2: oklch(95% 0.016 15);
+  --linea: oklch(89% 0.022 15);
   --tinta: oklch(23% 0.035 20);
   --tinta-2: oklch(42% 0.035 20);
   --rojo: oklch(51% 0.195 25);
@@ -536,7 +536,7 @@ fieldset.campo { border: 0; padding: 0; margin-inline: 0; }
 
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
-  background: oklch(97.6% 0.008 60 / 0.92);
+  background: oklch(97.8% 0.009 15 / 0.92);
   backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px);
   border-top: 1px solid var(--linea);
   padding-bottom: env(safe-area-inset-bottom);
