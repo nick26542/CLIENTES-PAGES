@@ -29,7 +29,7 @@ subtitle: "Plataforma Digital de Fidelización y Agendamiento para la Donación 
 | URL de la demo | {{URL}} |
 | Hospedaje | Vercel (sitio estático, HTTPS) |
 | Repositorio | GitHub, carpeta `coil-donacion/` |
-| Dispositivos emulados | iPhone 13 (390 × 844, Safari/WebKit en modo Chromium) y escritorio 1440 × 900 |
+| Dispositivos emulados | iPhone 13 emulado (390 × 844) en Chromium y escritorio 1440 × 900 |
 | Zona horaria y regional | America/Santiago, es-CL |
 | Fecha de ejecución | {{FECHA}} |
 | Datos | Ficticios. Centros y horarios de demostración. |

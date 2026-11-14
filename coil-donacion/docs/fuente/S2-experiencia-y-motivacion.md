@@ -51,7 +51,7 @@ El prototipo visual se construyó directamente en HTML (mockup navegable), lo qu
 
 El flowchart entregado por TSLB (nodos A a W) se tradujo al motor `triaje.js`. Los nodos B, C, E, G, I y K son **puertas secuenciales**: la primera respuesta que no cumple termina la autoevaluación. Las Etapas 2 a 4 alimentan los nodos M (criterio de exclusión) y O (requiere revisión), que se evalúan al final en ese orden: **la exclusión tiene prioridad sobre la revisión.** Los nodos R, T, U, V y W ocurren de forma presencial y quedan fuera de la plataforma (se informan en el resultado).
 
-![Árbol de decisión implementado](../diagramas/arbol-decision.png)
+![Árbol de decisión implementado (girar la página para leerlo)](../diagramas/arbol-decision-pagina.png)
 
 ### 4.1 Tabla de resultados
 

@@ -46,7 +46,7 @@ export const DIAGRAMAS = {
   I --> APR["Aprende<br/>mitos + guías"]
   I --> PER["Perfil<br/>puntos + insignias"]`,
 
-  "arbol-decision": `flowchart TD
+  "arbol-decision": `flowchart LR
   A(["Inicio: autoevaluación"]) --> B{"¿Tiene documento<br/>de identificación?"}
   B -- No --> X["X · No continuar hasta<br/>contar con identificación"]
   B -- Sí --> C{"¿Tiene entre<br/>17 y 70 años?"}
