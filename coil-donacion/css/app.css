@@ -83,6 +83,7 @@ h1, h2, h3 {
   margin: 0;
 }
 p { margin: 0; text-wrap: pretty; }
+h1, h2, h3, p, dd, strong { overflow-wrap: break-word; }
 a { color: var(--rojo); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 button, input, select { font: inherit; color: inherit; }
 img, svg { display: block; }
@@ -583,7 +584,10 @@ fieldset.campo { border: 0; padding: 0; margin-inline: 0; }
   .costado h2 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.035em; line-height: 1; margin-top: 28px; }
   .costado h2 em { font-style: normal; color: var(--rojo); }
   .costado p { margin-top: 16px; color: var(--tinta-2); max-width: 34ch; }
-  .costado .qr-nota { margin-top: auto; font-size: 0.875rem; color: var(--tinta-2); }
+  .costado .qr { margin: auto 0 0; display: flex; gap: 16px; align-items: center; }
+  .costado .qr img { width: 112px; height: 112px; padding: 10px; background: #fff; border-radius: 14px; border: 1px solid var(--linea); }
+  .costado .qr figcaption { font-size: 0.875rem; color: var(--tinta-2); }
+  .costado .qr b { color: var(--tinta); font-weight: 650; }
   .app {
     display: flex; flex-direction: column;
     margin: 24px 0; min-height: calc(100dvh - 48px); padding-bottom: 0;

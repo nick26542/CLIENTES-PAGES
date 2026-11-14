@@ -19,6 +19,7 @@ Prototipo web de la **Plataforma Digital de Fidelización y Agendamiento intelig
 
 | Semana | Documento | Incluye |
 |---|---|---|
+| 0 | `S0-resumen-y-guion-demo` | Resumen de avance, cifras, guion de demostración de 5 minutos, preguntas frecuentes y pendientes. |
 | 1 | `S1-integracion-y-diagnostico` | Necesidades, perfiles, propuesta de valor, 12 historias de usuario con criterios, Product Backlog, arquitectura, acuerdos, estructura del Padlet, glosario Salud/Software. |
 | 2 | `S2-experiencia-y-motivacion` | Navegación, mockups, árbol TSLB → lógica, clasificación de preguntas, modelo de datos + SQL, gamificación, tabla de validación. |
 | 3 | `S3-desarrollo-solucion` | Prototipo funcional, trazabilidad con el backlog, recordatorios, parametrización, cómo ejecutarlo. |
@@ -28,7 +29,7 @@ Lo marcado **[Completar]** requiere datos del equipo (nombres, URL, resultados d
 
 ## Demo publicada
 
-https://r3gimen-gym.vercel.app (proyecto de Vercel `r3gimen-gym`, apuntando a la carpeta `coil-donacion`).
+https://gota-donacion.vercel.app (proyecto de Vercel `gota-donacion`, carpeta `coil-donacion`).
 
 ## Publicar en otro proyecto de Vercel
 

@@ -21,7 +21,7 @@ await mkdir(GEN, { recursive: true });
 const URL_DEMO = process.argv[2] || "**[Completar con la URL de Vercel]**";
 const fecha = new Date().toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" });
 const ejecutar = (cmd, args, opts = {}) => {
-  const r = spawnSync(cmd, args, { encoding: "utf8", ...opts });
+  const r = spawnSync(cmd, args, { encoding: "utf8", env: { ...process.env, LANG: "C.UTF-8", LC_ALL: "C.UTF-8" }, ...opts });
   if (r.status !== 0 && !opts.permitirFallo) throw new Error(`${cmd} ${args.join(" ")}\n${r.stderr}`);
   return r;
 };
@@ -117,7 +117,12 @@ for (const f of fuentes) {
   const titulo = (md.match(/^title: "(.+)"$/m) || [])[1] || base;
 
   // Word
-  ejecutar("pandoc", [mdFinal, "-o", join(SALIDA, base + ".docx"), "--toc", "--toc-depth=2", "-M", "toc-title=Contenido", "-M", `date=${fecha}`, "-M", "author=Equipo COIL · Ingeniería de Sistemas", "--resource-path", DOCS]);
+  const mdWord = join(GEN, base + ".word.md");
+  // En Word el título va en la portada (estilo Title); se quita el H1 repetido y se agregan autor y fecha.
+  await writeFile(mdWord, (await readFile(mdFinal, "utf8"))
+    .replace(/^---\n/, `---\nauthor: "Equipo COIL · Ingeniería de Sistemas y TSLB"\ndate: "${fecha}"\n`)
+    .replace(/^# .+\n/m, ""));
+  ejecutar("pandoc", [mdWord, "-o", join(SALIDA, base + ".docx"), "--reference-doc", join(DOCS, "plantilla.docx"), "--resource-path", DOCS]);
 
   // HTML -> PDF
   const portada = `<section class="portada"><p class="proyecto">Proyecto COIL · Promoción de la Donación de Sangre</p><h1>${titulo}</h1>
