@@ -108,6 +108,9 @@ Aplicar con 5 a 8 jóvenes de 17 a 25 años, cada uno con su propio celular, abr
 | BUG-04 | Baja | El mensaje al fallar un mito decía "No exactamente Es un mito" (sin puntuación). | Mito o realidad | Texto corregido: "No exactamente: es un mito." | Cerrado |
 | BUG-05 | Baja | El canal "Enviarme por correo" usaba un ícono de información. | Mi hora | Ícono de sobre. | Cerrado |
 | BUG-06 | Baja | Prueba de progreso usaba una respuesta que activaba la pregunta condicional de autorización. | Pruebas | Se usa el caso clínico base. | Cerrado |
+| BUG-07 | Media | El recordatorio de una persona de 60 a 70 años decía "Lleva tu documento… y Por tu edad necesitas…": mezclaba un requisito que se cumple en el centro con lo que hay que llevar. | Recordatorios | Solo se agrega a "lleva" lo que realmente se lleva (autorización escrita del tutor a los 17 años). | Cerrado |
+| BUG-08 | Baja | La barra de avance del cuestionario saltaba en vez de avanzar: se volvía a crear en cada pregunta. | Autoevaluación | Se dibuja con el valor anterior y se anima al nuevo. | Cerrado |
+| BUG-09 | Baja | En las horas llenas se tachaba también la palabra "Lleno", que quedaba difícil de leer. | Agendamiento | Se tacha solo la hora. | Cerrado |
 
 ## 9. Listado de mejoras implementadas (Semana 4)
 
@@ -119,6 +122,14 @@ Aplicar con 5 a 8 jóvenes de 17 a 25 años, cada uno con su propio celular, abr
 6. **Compartir la campaña** con el menú nativo del celular.
 7. **Herramientas de demostración** para la presentación final.
 8. **Publicación en entorno demo** (Vercel) con HTTPS.
+9. **Revisión de diseño e interacción** (Impeccable y principios de Emil Kowalski):
+   - Inicio con hora agendada: muestra "Antes de tu cita" (dormir, comer, documento) en lugar de la explicación general.
+   - Historial con fecha de cada evento.
+   - Avisos: se pausan si la persona cambia de app, se cierran al tocarlos y salen más rápido de lo que entran.
+   - Días y horas responden al toque (escala leve) y al pasar el mouse solo en computador.
+   - Cambio de pantalla más corto (180 ms) y resultado más ágil (360 ms).
+   - "Reducir movimiento" del celular: se quitan los desplazamientos y se conservan solo fundidos suaves.
+10. **Dirección propia y código QR:** la demo vive en gota-donacion.vercel.app y la versión de escritorio muestra un QR para abrirla en el celular; al compartir el enlace aparece una imagen de vista previa.
 
 ## 10. Pendientes y riesgos para la Semana 5
 

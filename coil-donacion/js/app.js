@@ -51,13 +51,28 @@ function textoCuenta(fechaISO) {
 }
 
 let toastTimer;
+let toastRestante = 0;
+let toastDesde = 0;
+const TOAST_MS = 3600;
+function ocultarToast() { clearTimeout(toastTimer); $("#toast").hidden = true; }
+function programarToast(ms) {
+  clearTimeout(toastTimer);
+  toastRestante = ms;
+  toastDesde = Date.now();
+  toastTimer = setTimeout(ocultarToast, ms);
+}
 function toast(titulo, detalle = "", ico = "check") {
   const t = $("#toast");
   t.innerHTML = `${icon(ico)}<div><b>${esc(titulo)}</b>${detalle ? `<span>${esc(detalle)}</span>` : ""}</div>`;
   t.hidden = false;
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { t.hidden = true; }, 3600);
+  programarToast(TOAST_MS);
 }
+// El aviso no se pierde si la persona cambia de app: el tiempo se pausa con la pestaña oculta.
+document.addEventListener("visibilitychange", () => {
+  if ($("#toast").hidden) return;
+  if (document.hidden) { clearTimeout(toastTimer); toastRestante -= Date.now() - toastDesde; }
+  else programarToast(Math.max(toastRestante, 1200));
+});
 
 function premiar(motivo, mensaje) {
   const antes = estado.progreso.puntos;
@@ -92,6 +107,11 @@ function barra({ titulo = "", atras = null, puntos = true } = {}) {
 
 function ultimaEvaluacion() {
   return estado.evaluaciones[estado.evaluaciones.length - 1] || null;
+}
+
+/** Cosas adicionales que la persona debe llevar el día de la cita (para los recordatorios). */
+function extrasQueLlevar(cita) {
+  return cita?.requisitos?.includes("autorizacionTutor") ? ["la autorización escrita de tu padre, madre o tutor"] : [];
 }
 
 function requisitosTexto(ids = []) {
@@ -133,9 +153,20 @@ function vistaInicio() {
     </div>`;
   }
 
+  const preparate = cita ? `<section class="seccion" aria-labelledby="t-prep">
+      <h2 id="t-prep">Antes de tu cita</h2>
+      <ol class="pasos-inicio">
+        <li>${icon("clock")}<div><strong>Duerme al menos 5 horas</strong><span>La noche anterior. Te lo recordamos a las 20:00.</span></div></li>
+        <li>${icon("check")}<div><strong>Come algo liviano</strong><span>En las 5 horas previas. No se dona en ayunas.</span></div></li>
+        <li>${icon("shield-check")}<div><strong>Lleva tu documento</strong><span>Con RUN y fotografía${cita.requisitos?.includes("autorizacionTutor") ? ", y la autorización escrita de tu tutor" : ""}.</span></div></li>
+      </ol>
+      <div class="acciones"><a class="btn btn-suave" href="#/aprende/despues">Qué hacer después de donar</a></div>
+    </section>` : "";
+
   return `${barra()}
     ${principal}
-    <section class="seccion" aria-labelledby="t-como">
+    ${preparate}
+    ${cita ? "" : `<section class="seccion" aria-labelledby="t-como">
       <h2 id="t-como">Así funciona</h2>
       <ol class="pasos-inicio">
         <li>${icon("shield-check")}<div><strong>Autoevaluación de 1 minuto</strong><span>Preguntas de sí o no, basadas en los requisitos para donar en Chile.</span></div></li>
@@ -143,7 +174,7 @@ function vistaInicio() {
         <li>${icon("bell")}<div><strong>Te lo recordamos</strong><span>En tu calendario, por WhatsApp o correo, con lo que debes llevar.</span></div></li>
         <li>${icon("droplet")}<div><strong>Vuelve a donar</strong><span>Te avisamos cuando se cumpla tu intervalo y sumas puntos.</span></div></li>
       </ol>
-    </section>
+    </section>`}
     <section class="seccion" aria-labelledby="t-mitos">
       <h2 id="t-mitos">¿Mito o realidad?</h2>
       <p>“Hay que ir en ayunas a donar.”</p>
@@ -178,13 +209,15 @@ function vistaEvaluacion() {
   }
 
   const pct = Math.round(progreso(r) * 100);
+  const pctAnterior = sesion.pctAnterior ?? pct;
+  sesion.pctAnterior = pct;
   const previa = sesion.previa?.id === p.id ? sesion.previa.valor : null;
   const anim = sesion.direccion === "atras" ? "pregunta-vuelve" : "pregunta-entra";
   const sensible = p.etapa >= 3;
 
   return `${barra({ atras: sesion.orden.length ? "#/evaluacion/atras" : "#/", puntos: false })}
     <p class="etapa">Etapa ${p.etapa} de 4 · ${esc(ETAPAS[p.etapa])}</p>
-    <div class="progreso" role="progressbar" aria-label="Avance de la autoevaluación" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><span style="transform: scaleX(${Math.max(pct, 3) / 100})"></span></div>
+    <div class="progreso" role="progressbar" aria-label="Avance de la autoevaluación" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><span style="transform: scaleX(${Math.max(pctAnterior, 3) / 100})" data-hasta="${Math.max(pct, 3) / 100}"></span></div>
     <section class="pregunta ${anim}" aria-labelledby="q-${p.id}">
       <h2 id="q-${p.id}" tabindex="-1">${esc(p.texto)}</h2>
       ${p.ayuda ? `<p class="ayuda">${esc(p.ayuda)}</p>` : ""}
@@ -382,7 +415,7 @@ function vistaAgendar() {
     <h2 class="lista-titulo" id="t-horas">Horas para el ${esc(fechaLarga(a.fecha))}</h2>
     <div class="horas" role="group" aria-labelledby="t-horas">
       ${bloques.map((b) => `<button type="button" class="hora" data-hora="${b.hora}" aria-pressed="${a.hora === b.hora}" ${b.libres ? "" : "disabled"} aria-label="${b.hora}, ${b.libres ? `${b.libres} ${b.libres === 1 ? "cupo" : "cupos"}` : "sin cupos"}">
-        ${b.hora}<small>${b.libres ? `${b.libres} ${b.libres === 1 ? "cupo" : "cupos"}` : "Lleno"}</small></button>`).join("")}
+        <span class="h">${b.hora}</span><small>${b.libres ? `${b.libres} ${b.libres === 1 ? "cupo" : "cupos"}` : "Lleno"}</small></button>`).join("")}
     </div>
     ${bloques.every((b) => !b.libres) ? `<p class="vacio">Este día no quedan horas. Prueba con otro.</p>` : ""}
     ${elegido ? `<div class="resumen" aria-live="polite">
@@ -532,7 +565,7 @@ function vistaPerfil() {
     </section>` : `<div class="acciones"><a class="btn btn-secundario" href="#/perfil/editar">Crear mi perfil</a></div>`}
 
     ${historia.length ? `<section class="seccion" aria-labelledby="t-hist"><h2 id="t-hist">Historial</h2>
-      <ul class="historial">${historia.map((h) => `<li><b>${esc(h.t)}</b><span>${esc(h.d || "")}</span></li>`).join("")}</ul></section>` : ""}
+      <ul class="historial">${historia.map((h) => `<li><div><b>${esc(h.t)}</b><time datetime="${h.f}">${esc(fechaCorta(h.f))}</time></div><span>${esc(h.d || "")}</span></li>`).join("")}</ul></section>` : ""}
 
     <section class="seccion" aria-labelledby="t-priv">
       <h2 id="t-priv">Privacidad</h2>
@@ -589,7 +622,7 @@ function vistaAgenda() {
       <div class="acciones"><a class="btn btn-primario" href="${ultimaEvaluacion() && puedeAgendar().ok ? "#/agendar" : "#/evaluacion"}" data-accion="${ultimaEvaluacion() && puedeAgendar().ok ? "" : "empezar"}">Agendar una hora</a></div></div>`;
   }
 
-  const recs = planRecordatorios(cita, requisitosTexto(cita.requisitos).map((t) => t.replace(/^Llevar /, "").replace(/\.$/, "")));
+  const recs = planRecordatorios(cita, extrasQueLlevar(cita));
   const ahora = Date.now();
   const futuros = recs.filter((r) => new Date(r.cuando).getTime() > ahora);
   const guardados = new Set(estado.avisos.enviados);
@@ -736,6 +769,8 @@ function render() {
   if (cambioDeRuta && ruta !== "evaluacion") { void vista.offsetWidth; vista.classList.add("vista-entra"); }
 
   $$("[data-icon]").forEach((el) => { el.outerHTML = icon(el.dataset.icon); });
+  const barraAvance = vista.querySelector(".progreso span[data-hasta]");
+  if (barraAvance) requestAnimationFrame(() => requestAnimationFrame(() => { barraAvance.style.transform = `scaleX(${barraAvance.dataset.hasta})`; }));
 
   // Navegación inferior: se oculta durante el cuestionario para no distraer.
   const enFlujo = ruta === "evaluacion";
@@ -758,6 +793,8 @@ function render() {
 }
 
 // ---------------- Eventos ----------------
+
+$("#toast").addEventListener("click", ocultarToast);
 
 document.addEventListener("click", async (e) => {
   const t = e.target.closest("[data-responder],[data-accion],[data-centro],[data-fecha],[data-hora],[data-mito],[data-canal]");
@@ -898,7 +935,7 @@ document.addEventListener("click", async (e) => {
     }
     case "demo-recordatorio": {
       const cita = citaActiva(estado);
-      const r = cita ? planRecordatorios(cita)[1] : { titulo: "Mañana donas sangre", texto: "Duerme al menos 5 horas esta noche." };
+      const r = cita ? planRecordatorios(cita, extrasQueLlevar(cita))[1] : { titulo: "Mañana donas sangre", texto: "Duerme al menos 5 horas esta noche." };
       mostrarRecordatorio(r);
       break;
     }
